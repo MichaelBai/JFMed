@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C1CED791D3D3217003D599A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1CED781D3D3217003D599A /* main.m */; };
+		4C1CED7C1D3D3217003D599A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1CED7B1D3D3217003D599A /* AppDelegate.m */; };
+		4C1CED821D3D3217003D599A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C1CED801D3D3217003D599A /* Main.storyboard */; };
+		4C1CED841D3D3217003D599A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C1CED831D3D3217003D599A /* Images.xcassets */; };
+		4C1CED871D3D3217003D599A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C1CED851D3D3217003D599A /* LaunchScreen.xib */; };
+		4C1CED931D3D3218003D599A /* JFMedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1CED921D3D3218003D599A /* JFMedTests.m */; };
+		4CBB1D8F1D3EFF8900357B9E /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1D8E1D3EFF8900357B9E /* WelcomeViewController.m */; };
+		B7F8044FA31BC795CDCCD38E /* libPods-JFMed.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A542EC6CFDB341B1E4CF27C4 /* libPods-JFMed.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C1CED8D1D3D3218003D599A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C1CED6B1D3D3217003D599A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C1CED721D3D3217003D599A;
+			remoteInfo = JFMed;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4C1CED731D3D3217003D599A /* JFMed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JFMed.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C1CED771D3D3217003D599A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C1CED781D3D3217003D599A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4C1CED7A1D3D3217003D599A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4C1CED7B1D3D3217003D599A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4C1CED811D3D3217003D599A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4C1CED831D3D3217003D599A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4C1CED861D3D3217003D599A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		4C1CED8C1D3D3218003D599A /* JFMedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JFMedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C1CED911D3D3218003D599A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C1CED921D3D3218003D599A /* JFMedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFMedTests.m; sourceTree = "<group>"; };
+		4CBB1D8D1D3EFF8900357B9E /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		4CBB1D8E1D3EFF8900357B9E /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		60E5C448BFFCB28C46F1EAAA /* Pods-JFMed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JFMed.release.xcconfig"; path = "Pods/Target Support Files/Pods-JFMed/Pods-JFMed.release.xcconfig"; sourceTree = "<group>"; };
+		6CEF057282CF59FBEF290FD8 /* Pods-JFMed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JFMed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JFMed/Pods-JFMed.debug.xcconfig"; sourceTree = "<group>"; };
+		A542EC6CFDB341B1E4CF27C4 /* libPods-JFMed.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JFMed.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C1CED701D3D3217003D599A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7F8044FA31BC795CDCCD38E /* libPods-JFMed.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C1CED891D3D3218003D599A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1592F4660F951A2EA813181C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A542EC6CFDB341B1E4CF27C4 /* libPods-JFMed.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C1CED6A1D3D3217003D599A = {
+			isa = PBXGroup;
+			children = (
+				4C1CED751D3D3217003D599A /* JFMed */,
+				4C1CED8F1D3D3218003D599A /* JFMedTests */,
+				4C1CED741D3D3217003D599A /* Products */,
+				9DA6889FABD0F0D78A7A57D8 /* Pods */,
+				1592F4660F951A2EA813181C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4C1CED741D3D3217003D599A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C1CED731D3D3217003D599A /* JFMed.app */,
+				4C1CED8C1D3D3218003D599A /* JFMedTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C1CED751D3D3217003D599A /* JFMed */ = {
+			isa = PBXGroup;
+			children = (
+				4CBB1D8C1D3EFE7600357B9E /* controllers */,
+				4C1CED7A1D3D3217003D599A /* AppDelegate.h */,
+				4C1CED7B1D3D3217003D599A /* AppDelegate.m */,
+				4C1CED801D3D3217003D599A /* Main.storyboard */,
+				4C1CED831D3D3217003D599A /* Images.xcassets */,
+				4C1CED851D3D3217003D599A /* LaunchScreen.xib */,
+				4C1CED761D3D3217003D599A /* Supporting Files */,
+			);
+			path = JFMed;
+			sourceTree = "<group>";
+		};
+		4C1CED761D3D3217003D599A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C1CED771D3D3217003D599A /* Info.plist */,
+				4C1CED781D3D3217003D599A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C1CED8F1D3D3218003D599A /* JFMedTests */ = {
+			isa = PBXGroup;
+			children = (
+				4C1CED921D3D3218003D599A /* JFMedTests.m */,
+				4C1CED901D3D3218003D599A /* Supporting Files */,
+			);
+			path = JFMedTests;
+			sourceTree = "<group>";
+		};
+		4C1CED901D3D3218003D599A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C1CED911D3D3218003D599A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4CBB1D8C1D3EFE7600357B9E /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4CBB1D8D1D3EFF8900357B9E /* WelcomeViewController.h */,
+				4CBB1D8E1D3EFF8900357B9E /* WelcomeViewController.m */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		9DA6889FABD0F0D78A7A57D8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6CEF057282CF59FBEF290FD8 /* Pods-JFMed.debug.xcconfig */,
+				60E5C448BFFCB28C46F1EAAA /* Pods-JFMed.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C1CED721D3D3217003D599A /* JFMed */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C1CED961D3D3218003D599A /* Build configuration list for PBXNativeTarget "JFMed" */;
+			buildPhases = (
+				8D76CC692D559F13934B9C6D /* Check Pods Manifest.lock */,
+				4C1CED6F1D3D3217003D599A /* Sources */,
+				4C1CED701D3D3217003D599A /* Frameworks */,
+				4C1CED711D3D3217003D599A /* Resources */,
+				B96D9683256A911CAAB88358 /* Embed Pods Frameworks */,
+				59B32FF0D310AF9B0C1D4DC0 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JFMed;
+			productName = JFMed;
+			productReference = 4C1CED731D3D3217003D599A /* JFMed.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4C1CED8B1D3D3218003D599A /* JFMedTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C1CED991D3D3218003D599A /* Build configuration list for PBXNativeTarget "JFMedTests" */;
+			buildPhases = (
+				4C1CED881D3D3218003D599A /* Sources */,
+				4C1CED891D3D3218003D599A /* Frameworks */,
+				4C1CED8A1D3D3218003D599A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C1CED8E1D3D3218003D599A /* PBXTargetDependency */,
+			);
+			name = JFMedTests;
+			productName = JFMedTests;
+			productReference = 4C1CED8C1D3D3218003D599A /* JFMedTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C1CED6B1D3D3217003D599A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = MichaelBai;
+				TargetAttributes = {
+					4C1CED721D3D3217003D599A = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					4C1CED8B1D3D3218003D599A = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 4C1CED721D3D3217003D599A;
+					};
+				};
+			};
+			buildConfigurationList = 4C1CED6E1D3D3217003D599A /* Build configuration list for PBXProject "JFMed" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4C1CED6A1D3D3217003D599A;
+			productRefGroup = 4C1CED741D3D3217003D599A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C1CED721D3D3217003D599A /* JFMed */,
+				4C1CED8B1D3D3218003D599A /* JFMedTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C1CED711D3D3217003D599A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C1CED821D3D3217003D599A /* Main.storyboard in Resources */,
+				4C1CED871D3D3217003D599A /* LaunchScreen.xib in Resources */,
+				4C1CED841D3D3217003D599A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C1CED8A1D3D3218003D599A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		59B32FF0D310AF9B0C1D4DC0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JFMed/Pods-JFMed-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D76CC692D559F13934B9C6D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B96D9683256A911CAAB88358 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JFMed/Pods-JFMed-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C1CED6F1D3D3217003D599A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C1CED7C1D3D3217003D599A /* AppDelegate.m in Sources */,
+				4C1CED791D3D3217003D599A /* main.m in Sources */,
+				4CBB1D8F1D3EFF8900357B9E /* WelcomeViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C1CED881D3D3218003D599A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C1CED931D3D3218003D599A /* JFMedTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4C1CED8E1D3D3218003D599A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C1CED721D3D3217003D599A /* JFMed */;
+			targetProxy = 4C1CED8D1D3D3218003D599A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4C1CED801D3D3217003D599A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C1CED811D3D3217003D599A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4C1CED851D3D3217003D599A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C1CED861D3D3217003D599A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C1CED941D3D3218003D599A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4C1CED951D3D3218003D599A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C1CED971D3D3218003D599A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CEF057282CF59FBEF290FD8 /* Pods-JFMed.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JFMed/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.michaelbai.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4C1CED981D3D3218003D599A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60E5C448BFFCB28C46F1EAAA /* Pods-JFMed.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JFMed/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.michaelbai.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4C1CED9A1D3D3218003D599A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JFMedTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.michaelbai.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JFMed.app/JFMed";
+			};
+			name = Debug;
+		};
+		4C1CED9B1D3D3218003D599A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JFMedTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.michaelbai.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JFMed.app/JFMed";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C1CED6E1D3D3217003D599A /* Build configuration list for PBXProject "JFMed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C1CED941D3D3218003D599A /* Debug */,
+				4C1CED951D3D3218003D599A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C1CED961D3D3218003D599A /* Build configuration list for PBXNativeTarget "JFMed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C1CED971D3D3218003D599A /* Debug */,
+				4C1CED981D3D3218003D599A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C1CED991D3D3218003D599A /* Build configuration list for PBXNativeTarget "JFMedTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C1CED9A1D3D3218003D599A /* Debug */,
+				4C1CED9B1D3D3218003D599A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C1CED6B1D3D3217003D599A /* Project object */;
+}
