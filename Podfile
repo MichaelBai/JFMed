@@ -6,6 +6,7 @@
 target 'JFMed' do
 
 pod 'AFNetworking',                     "~> 2.5.4"
+pod 'Masonry'
 
 end
 
