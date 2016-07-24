@@ -17,6 +17,8 @@
 		4CBB1D941D3F039700357B9E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1D931D3F039700357B9E /* HomeViewController.m */; };
 		4CBB1D9E1D3FB4EE00357B9E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1D9D1D3FB4EE00357B9E /* LoginViewController.m */; };
 		4CBB1DA11D3FB4F800357B9E /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DA01D3FB4F800357B9E /* RegisterViewController.m */; };
+		4CBB1DA41D426D5000357B9E /* SelfCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DA31D426D5000357B9E /* SelfCheckViewController.m */; };
+		4CBB1DA81D426E0D00357B9E /* MBRotateControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DA71D426E0D00357B9E /* MBRotateControl.m */; };
 		B7F8044FA31BC795CDCCD38E /* libPods-JFMed.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A542EC6CFDB341B1E4CF27C4 /* libPods-JFMed.a */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,10 @@
 		4CBB1D9D1D3FB4EE00357B9E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = JFMed/Controllers/LoginViewController.m; sourceTree = SOURCE_ROOT; };
 		4CBB1D9F1D3FB4F800357B9E /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = JFMed/Controllers/RegisterViewController.h; sourceTree = SOURCE_ROOT; };
 		4CBB1DA01D3FB4F800357B9E /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = JFMed/Controllers/RegisterViewController.m; sourceTree = SOURCE_ROOT; };
+		4CBB1DA21D426D5000357B9E /* SelfCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelfCheckViewController.h; path = JFMed/Controllers/SelfCheckViewController.h; sourceTree = SOURCE_ROOT; };
+		4CBB1DA31D426D5000357B9E /* SelfCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelfCheckViewController.m; path = JFMed/Controllers/SelfCheckViewController.m; sourceTree = SOURCE_ROOT; };
+		4CBB1DA61D426E0D00357B9E /* MBRotateControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBRotateControl.h; sourceTree = "<group>"; };
+		4CBB1DA71D426E0D00357B9E /* MBRotateControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBRotateControl.m; sourceTree = "<group>"; };
 		60E5C448BFFCB28C46F1EAAA /* Pods-JFMed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JFMed.release.xcconfig"; path = "Pods/Target Support Files/Pods-JFMed/Pods-JFMed.release.xcconfig"; sourceTree = "<group>"; };
 		6CEF057282CF59FBEF290FD8 /* Pods-JFMed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JFMed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JFMed/Pods-JFMed.debug.xcconfig"; sourceTree = "<group>"; };
 		A542EC6CFDB341B1E4CF27C4 /* libPods-JFMed.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JFMed.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +113,7 @@
 		4C1CED751D3D3217003D599A /* JFMed */ = {
 			isa = PBXGroup;
 			children = (
+				4CBB1DA51D426DE700357B9E /* Views */,
 				4CBB1D8C1D3EFE7600357B9E /* Controllers */,
 				4C1CED7A1D3D3217003D599A /* AppDelegate.h */,
 				4C1CED7B1D3D3217003D599A /* AppDelegate.m */,
@@ -157,9 +164,20 @@
 				4CBB1D9D1D3FB4EE00357B9E /* LoginViewController.m */,
 				4CBB1D9F1D3FB4F800357B9E /* RegisterViewController.h */,
 				4CBB1DA01D3FB4F800357B9E /* RegisterViewController.m */,
+				4CBB1DA21D426D5000357B9E /* SelfCheckViewController.h */,
+				4CBB1DA31D426D5000357B9E /* SelfCheckViewController.m */,
 			);
 			name = Controllers;
 			path = controllers;
+			sourceTree = "<group>";
+		};
+		4CBB1DA51D426DE700357B9E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4CBB1DA61D426E0D00357B9E /* MBRotateControl.h */,
+				4CBB1DA71D426E0D00357B9E /* MBRotateControl.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		9DA6889FABD0F0D78A7A57D8 /* Pods */ = {
@@ -223,6 +241,7 @@
 				TargetAttributes = {
 					4C1CED721D3D3217003D599A = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 67B7CKJC33;
 					};
 					4C1CED8B1D3D3218003D599A = {
 						CreatedOnToolsVersion = 6.2;
@@ -324,6 +343,8 @@
 			files = (
 				4C1CED7C1D3D3217003D599A /* AppDelegate.m in Sources */,
 				4CBB1DA11D3FB4F800357B9E /* RegisterViewController.m in Sources */,
+				4CBB1DA41D426D5000357B9E /* SelfCheckViewController.m in Sources */,
+				4CBB1DA81D426E0D00357B9E /* MBRotateControl.m in Sources */,
 				4C1CED791D3D3217003D599A /* main.m in Sources */,
 				4CBB1D8F1D3EFF8900357B9E /* WelcomeViewController.m in Sources */,
 				4CBB1D941D3F039700357B9E /* HomeViewController.m in Sources */,
@@ -451,12 +472,15 @@
 			baseConfigurationReference = 6CEF057282CF59FBEF290FD8 /* Pods-JFMed.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/JFMed/PrefixHeader.pch";
 				INFOPLIST_FILE = JFMed/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.michaelbai.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -465,12 +489,15 @@
 			baseConfigurationReference = 60E5C448BFFCB28C46F1EAAA /* Pods-JFMed.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/JFMed/PrefixHeader.pch";
 				INFOPLIST_FILE = JFMed/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.michaelbai.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

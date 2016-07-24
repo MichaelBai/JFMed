@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "SelfCheckViewController.h"
 
 @interface HomeViewController ()
 
@@ -14,15 +15,27 @@
 
 @implementation HomeViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [kAppDelegate showLogin];
+//    [kAppDelegate showLogin];
+    
+    UIButton *checkBtn = [UIButton new];
+    [checkBtn setTitle:@"脊柱自查" forState:UIControlStateNormal];
+    [checkBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [checkBtn addTarget:self action:@selector(gotoCheck) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:checkBtn];
+    
+    [checkBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(@0);
+    }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)gotoCheck
+{
+    SelfCheckViewController *selfCheckVC = [[SelfCheckViewController alloc] init];
+    [self.navigationController pushViewController:selfCheckVC animated:YES];
 }
 
 /*
