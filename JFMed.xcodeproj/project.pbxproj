@@ -21,6 +21,12 @@
 		4CBB1DA81D426E0D00357B9E /* MBRotateControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DA71D426E0D00357B9E /* MBRotateControl.m */; };
 		4CBB1DAB1D44B89000357B9E /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DAA1D44B89000357B9E /* NewsTableViewCell.m */; };
 		4CBB1DAF1D44EC9B00357B9E /* UIViewController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DAE1D44EC9B00357B9E /* UIViewController+Utils.m */; };
+		4CBB1DB21D44FDB800357B9E /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DB11D44FDB800357B9E /* NewsViewController.m */; };
+		4CBB1DB51D44FDCD00357B9E /* DoctorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DB41D44FDCD00357B9E /* DoctorsViewController.m */; };
+		4CBB1DB81D44FEB300357B9E /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DB71D44FEB300357B9E /* UIView+Utils.m */; };
+		4CBB1DBB1D45056A00357B9E /* MBTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DBA1D45056A00357B9E /* MBTabView.m */; };
+		4CBB1DBE1D4506ED00357B9E /* NSString+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DBD1D4506ED00357B9E /* NSString+Utility.m */; };
+		4CBB1DC11D459C2C00357B9E /* DoctorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DC01D459C2C00357B9E /* DoctorTableViewCell.m */; };
 		B7F8044FA31BC795CDCCD38E /* libPods-JFMed.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A542EC6CFDB341B1E4CF27C4 /* libPods-JFMed.a */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +70,18 @@
 		4CBB1DAA1D44B89000357B9E /* NewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
 		4CBB1DAD1D44EC9B00357B9E /* UIViewController+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utils.h"; sourceTree = "<group>"; };
 		4CBB1DAE1D44EC9B00357B9E /* UIViewController+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utils.m"; sourceTree = "<group>"; };
+		4CBB1DB01D44FDB800357B9E /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsViewController.h; path = JFMed/Controllers/NewsViewController.h; sourceTree = SOURCE_ROOT; };
+		4CBB1DB11D44FDB800357B9E /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsViewController.m; path = JFMed/Controllers/NewsViewController.m; sourceTree = SOURCE_ROOT; };
+		4CBB1DB31D44FDCD00357B9E /* DoctorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DoctorsViewController.h; path = JFMed/Controllers/DoctorsViewController.h; sourceTree = SOURCE_ROOT; };
+		4CBB1DB41D44FDCD00357B9E /* DoctorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DoctorsViewController.m; path = JFMed/Controllers/DoctorsViewController.m; sourceTree = SOURCE_ROOT; };
+		4CBB1DB61D44FEB300357B9E /* UIView+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utils.h"; sourceTree = "<group>"; };
+		4CBB1DB71D44FEB300357B9E /* UIView+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utils.m"; sourceTree = "<group>"; };
+		4CBB1DB91D45056A00357B9E /* MBTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBTabView.h; sourceTree = "<group>"; };
+		4CBB1DBA1D45056A00357B9E /* MBTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBTabView.m; sourceTree = "<group>"; };
+		4CBB1DBC1D4506ED00357B9E /* NSString+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utility.h"; sourceTree = "<group>"; };
+		4CBB1DBD1D4506ED00357B9E /* NSString+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utility.m"; sourceTree = "<group>"; };
+		4CBB1DBF1D459C2C00357B9E /* DoctorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorTableViewCell.h; sourceTree = "<group>"; };
+		4CBB1DC01D459C2C00357B9E /* DoctorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorTableViewCell.m; sourceTree = "<group>"; };
 		60E5C448BFFCB28C46F1EAAA /* Pods-JFMed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JFMed.release.xcconfig"; path = "Pods/Target Support Files/Pods-JFMed/Pods-JFMed.release.xcconfig"; sourceTree = "<group>"; };
 		6CEF057282CF59FBEF290FD8 /* Pods-JFMed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JFMed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JFMed/Pods-JFMed.debug.xcconfig"; sourceTree = "<group>"; };
 		A542EC6CFDB341B1E4CF27C4 /* libPods-JFMed.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JFMed.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +191,10 @@
 				4CBB1DA01D3FB4F800357B9E /* RegisterViewController.m */,
 				4CBB1DA21D426D5000357B9E /* SelfCheckViewController.h */,
 				4CBB1DA31D426D5000357B9E /* SelfCheckViewController.m */,
+				4CBB1DB01D44FDB800357B9E /* NewsViewController.h */,
+				4CBB1DB11D44FDB800357B9E /* NewsViewController.m */,
+				4CBB1DB31D44FDCD00357B9E /* DoctorsViewController.h */,
+				4CBB1DB41D44FDCD00357B9E /* DoctorsViewController.m */,
 			);
 			name = Controllers;
 			path = controllers;
@@ -181,10 +203,14 @@
 		4CBB1DA51D426DE700357B9E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4CBB1DB91D45056A00357B9E /* MBTabView.h */,
+				4CBB1DBA1D45056A00357B9E /* MBTabView.m */,
 				4CBB1DA61D426E0D00357B9E /* MBRotateControl.h */,
 				4CBB1DA71D426E0D00357B9E /* MBRotateControl.m */,
 				4CBB1DA91D44B89000357B9E /* NewsTableViewCell.h */,
 				4CBB1DAA1D44B89000357B9E /* NewsTableViewCell.m */,
+				4CBB1DBF1D459C2C00357B9E /* DoctorTableViewCell.h */,
+				4CBB1DC01D459C2C00357B9E /* DoctorTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,8 +218,12 @@
 		4CBB1DAC1D44EC5D00357B9E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4CBB1DBC1D4506ED00357B9E /* NSString+Utility.h */,
+				4CBB1DBD1D4506ED00357B9E /* NSString+Utility.m */,
 				4CBB1DAD1D44EC9B00357B9E /* UIViewController+Utils.h */,
 				4CBB1DAE1D44EC9B00357B9E /* UIViewController+Utils.m */,
+				4CBB1DB61D44FEB300357B9E /* UIView+Utils.h */,
+				4CBB1DB71D44FEB300357B9E /* UIView+Utils.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -359,15 +389,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CBB1DB81D44FEB300357B9E /* UIView+Utils.m in Sources */,
 				4C1CED7C1D3D3217003D599A /* AppDelegate.m in Sources */,
 				4CBB1DA11D3FB4F800357B9E /* RegisterViewController.m in Sources */,
 				4CBB1DA41D426D5000357B9E /* SelfCheckViewController.m in Sources */,
+				4CBB1DB51D44FDCD00357B9E /* DoctorsViewController.m in Sources */,
 				4CBB1DA81D426E0D00357B9E /* MBRotateControl.m in Sources */,
 				4C1CED791D3D3217003D599A /* main.m in Sources */,
+				4CBB1DB21D44FDB800357B9E /* NewsViewController.m in Sources */,
 				4CBB1DAB1D44B89000357B9E /* NewsTableViewCell.m in Sources */,
 				4CBB1D8F1D3EFF8900357B9E /* WelcomeViewController.m in Sources */,
 				4CBB1D941D3F039700357B9E /* HomeViewController.m in Sources */,
+				4CBB1DBB1D45056A00357B9E /* MBTabView.m in Sources */,
 				4CBB1DAF1D44EC9B00357B9E /* UIViewController+Utils.m in Sources */,
+				4CBB1DBE1D4506ED00357B9E /* NSString+Utility.m in Sources */,
+				4CBB1DC11D459C2C00357B9E /* DoctorTableViewCell.m in Sources */,
 				4CBB1D9E1D3FB4EE00357B9E /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

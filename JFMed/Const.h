@@ -16,8 +16,10 @@
 #define RGBCOLOR(r,g,b)                 [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
 #define RGBACOLOR(r,g,b,a)              [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
 
-//NavBar背景色
-#define COLOR_NAV                       [UIColor colorWithRed:241/255.0f green:241/255.0f blue:241/255.0f alpha:1.000]
+#define COLOR_THEME   HEXColor(0x2dd2cc)
+#define COLOR_LINE    HEXColor(0xeaeaea)
+#define COLOR_TITLE   HEXColor(0x222222)
+#define COLOR_NOTICE  HEXColor(0x999999)
 
 #define FONT_(xx)                       [UIFont systemFontOfSize:xx]
 #define FONT_BOLD_(xx)                  [UIFont boldSystemFontOfSize:xx]

@@ -9,6 +9,8 @@
 #import "HomeViewController.h"
 #import "SelfCheckViewController.h"
 #import "NewsTableViewCell.h"
+#import "NewsViewController.h"
+#import "DoctorsViewController.h"
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -53,6 +55,22 @@
     
     offsetY += 150;
     
+    UIView *moreNews = [[UIView alloc] initWithFrame:CGRectMake(0, offsetY, SCREEN_WIDTH, 40)];
+    [_scrollView addSubview:moreNews];
+    [moreNews addTapAction:@selector(gotoNewsVC) target:self];
+    
+    UILabel *moreNewsLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, 40)];
+    moreNewsLabel.text = @"更多资讯";
+    moreNewsLabel.textColor = COLOR_TITLE;
+    moreNewsLabel.font = FONT_(14);
+    [moreNews addSubview:moreNewsLabel];
+    
+    UIView *moreNewsLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 39.5, SCREEN_WIDTH, 0.5)];
+    moreNewsLineView.backgroundColor = COLOR_LINE;
+    [moreNews addSubview:moreNewsLineView];
+    
+    offsetY += 40;
+    
     CGFloat tableViewHeight = [NewsTableViewCell CellHeight]*3;
     UITableView *newsTable = [[UITableView alloc] initWithFrame:CGRectMake(0, offsetY, SCREEN_WIDTH, tableViewHeight)];
     newsTable.delegate = self;
@@ -62,6 +80,22 @@
     [_scrollView addSubview:newsTable];
     
     offsetY += tableViewHeight;
+    
+    UIView *moreDoctors = [[UIView alloc] initWithFrame:CGRectMake(0, offsetY, SCREEN_WIDTH, 40)];
+    [_scrollView addSubview:moreDoctors];
+    [moreDoctors addTapAction:@selector(gotoDoctorsVC) target:self];
+    
+    UILabel *moreDoctorsLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, 40)];
+    moreDoctorsLabel.text = @"更多医生";
+    moreDoctorsLabel.textColor = COLOR_TITLE;
+    moreDoctorsLabel.font = FONT_(14);
+    [moreDoctors addSubview:moreDoctorsLabel];
+    
+    UIView *moreDoctorsLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 39.5, SCREEN_WIDTH, 0.5)];
+    moreDoctorsLineView.backgroundColor = COLOR_LINE;
+    [moreDoctors addSubview:moreDoctorsLineView];
+    
+    offsetY += 40;
     
     UIView *doctorsView = [[UIView alloc] initWithFrame:CGRectMake(0, offsetY, SCREEN_WIDTH, 118)];
     [_scrollView addSubview:doctorsView];
@@ -89,6 +123,22 @@
         
         leftOffset += singleDoctorViewWidth;
     }
+    
+    offsetY += 118;
+    
+    _scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, offsetY);
+}
+
+- (void)gotoNewsVC
+{
+    NewsViewController *newsVC = [[NewsViewController alloc] init];
+    [self.navigationController pushViewController:newsVC animated:YES];
+}
+
+- (void)gotoDoctorsVC
+{
+    DoctorsViewController *doctorsVC = [[DoctorsViewController alloc] init];
+    [self.navigationController pushViewController:doctorsVC animated:YES];
 }
 
 - (void)gotoCheck
