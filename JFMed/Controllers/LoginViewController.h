@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoginProgressView.h"
 
 @interface LoginViewController : UIViewController
 

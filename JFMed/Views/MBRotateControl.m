@@ -83,6 +83,9 @@ const CGFloat kInvalidDeltaAngle = 1024;
     self.container.transform = CGAffineTransformRotate(self.startTransform, -angleDifference);
     float currentAngle = atan2(self.container.transform.b, self.container.transform.a);
     NSLog(@"current %.2f", currentAngle * 180 / M_PI);
+    if (self.delegate && [self.delegate respondsToSelector:@selector(angleDidChangeTo:)]) {
+        [self.delegate angleDidChangeTo:currentAngle * 180 / M_PI];
+    }
     return YES;
 }
 

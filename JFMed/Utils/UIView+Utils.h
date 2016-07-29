@@ -11,5 +11,6 @@
 @interface UIView (Utils)
 
 - (void)addTapAction:(SEL)selector target:(id)target;
+- (void)removeAllSubViews;
 
 @end

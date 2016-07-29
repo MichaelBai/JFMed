@@ -1,24 +1,21 @@
 //
-//  RegisterViewController.m
+//  ForgotPasswordViewController.m
 //  JFMed
 //
-//  Created by Michael on 7/20/16.
+//  Created by Michael on 7/29/16.
 //  Copyright © 2016 MichaelBai. All rights reserved.
 //
 
-#import "RegisterViewController.h"
+#import "ForgotPasswordViewController.h"
 #import "LoginProgressView.h"
 
-typedef NS_ENUM(NSInteger, RegisterProgress) {
-    RegisterProgressPhoneNumber,
-    RegisterProgressPhoneVerify,
-    RegisterProgressPassword,
-    RegisterProgressNickname,
-    RegisterProgressSex,
-    RegisterProgressBirthdate
+typedef NS_ENUM(NSInteger, ForgotPasswordProgress) {
+    ForgotPasswordProgressPhoneNumber,
+    ForgotPasswordProgressPhoneVerify,
+    ForgotPasswordProgressNewPassword
 };
 
-@interface RegisterViewController ()
+@interface ForgotPasswordViewController ()
 
 @property (nonatomic, strong) LoginProgressView *progressView;
 @property (nonatomic, strong) UIView *actionView;
@@ -29,92 +26,59 @@ typedef NS_ENUM(NSInteger, RegisterProgress) {
 
 @end
 
-@implementation RegisterViewController
+@implementation ForgotPasswordViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.title = @"注册";
+    self.title = @"找回密码";
     
-    self.progressView = [[LoginProgressView alloc] initWithFrame:CGRectMake(0, NAV_HEIGHT + 50, SCREEN_WIDTH, 20) progressCount:6];
+    self.progressView = [[LoginProgressView alloc] initWithFrame:CGRectMake(0, NAV_HEIGHT + 50, SCREEN_WIDTH, 20) progressCount:3];
     [self.view addSubview:self.progressView];
     
     self.actionView = [[UIView alloc] initWithFrame:CGRectMake(0, NAV_HEIGHT + 130, SCREEN_WIDTH, 200)];
     [self.view addSubview:self.actionView];
     
-    [self changeState:RegisterProgressPhoneNumber];
+    [self changeState:ForgotPasswordProgressPhoneNumber];
 }
 
 #pragma mark - actions
 
 - (void)phoneNumberClick:(UIButton *)sender
 {
-    [self changeState:RegisterProgressPhoneVerify];
+    [self changeState:ForgotPasswordProgressPhoneVerify];
 }
 
 - (void)phoneVerifyClick:(UIButton *)sender
 {
-    [self changeState:RegisterProgressPassword];
+    [self changeState:ForgotPasswordProgressNewPassword];
 }
 
 - (void)passwordClick:(UIButton *)sender
 {
-    [self changeState:RegisterProgressNickname];
-}
-
-- (void)nicknameClick:(UIButton *)sender
-{
-    [self changeState:RegisterProgressSex];
-}
-
-- (void)sexClick:(UIButton *)sender
-{
-    
-    [self changeState:RegisterProgressBirthdate];
-}
-
-- (void)birthdateClick:(UIButton *)sender
-{
     
 }
 
-- (void)manBtnClick:(UIButton *)sender
-{
-    if (!sender.selected) {
-        sender.selected = YES;
-        self.womanBtn.selected = NO;
-    }
-}
-
-- (void)womanBtnClick:(UIButton *)sender
-{
-    if (!sender.selected) {
-        sender.selected = YES;
-        self.manBtn.selected = NO;
-    }
-}
-
-- (void)changeState:(RegisterProgress)state
+- (void)changeState:(ForgotPasswordProgress)state
 {
     [self.actionView removeAllSubViews];
     self.progressView.progressIndex = state;
     switch (state) {
-        case RegisterProgressPhoneNumber:
+        case ForgotPasswordProgressPhoneNumber:
         {
             UITextField *phoneNumberField = [self customTextFieldWithOffsetY:0];
             [self.actionView addSubview:phoneNumberField];
             UIButton *nextBtn = [self customButtonWithOffsetY:44 + 25];
             [self.actionView addSubview:nextBtn];
-            [nextBtn setTitle:@"注 册" forState:UIControlStateNormal];
+            [nextBtn setTitle:@"把验证码发给我" forState:UIControlStateNormal];
             [nextBtn addTarget:self action:@selector(phoneNumberClick:) forControlEvents:UIControlEventTouchUpInside];
             self.curButton = nextBtn;
             self.curTextFields = @[phoneNumberField];
         }
             break;
-        case RegisterProgressPhoneVerify:
+        case ForgotPasswordProgressPhoneVerify:
         {
             UITextField *phoneVerifyField = [self customTextFieldWithOffsetY:0];
             [self.actionView addSubview:phoneVerifyField];
@@ -126,7 +90,7 @@ typedef NS_ENUM(NSInteger, RegisterProgress) {
             self.curTextFields = @[phoneVerifyField];
         }
             break;
-        case RegisterProgressPassword:
+        case ForgotPasswordProgressNewPassword:
         {
             UITextField *pwdField = [self customTextFieldWithOffsetY:0];
             [self.actionView addSubview:pwdField];
@@ -134,55 +98,10 @@ typedef NS_ENUM(NSInteger, RegisterProgress) {
             [self.actionView addSubview:pwdAgainField];
             UIButton *nextBtn = [self customButtonWithOffsetY:(44 + 25) * 2];
             [self.actionView addSubview:nextBtn];
-            [nextBtn setTitle:@"下一步" forState:UIControlStateNormal];
+            [nextBtn setTitle:@"确 定" forState:UIControlStateNormal];
             [nextBtn addTarget:self action:@selector(passwordClick:) forControlEvents:UIControlEventTouchUpInside];
             self.curButton = nextBtn;
             self.curTextFields = @[pwdField, pwdAgainField];
-        }
-            break;
-        case RegisterProgressNickname:
-        {
-            UITextField *nicknameField = [self customTextFieldWithOffsetY:0];
-            [self.actionView addSubview:nicknameField];
-            UIButton *nextBtn = [self customButtonWithOffsetY:44 + 25];
-            [self.actionView addSubview:nextBtn];
-            [nextBtn setTitle:@"下一步" forState:UIControlStateNormal];
-            [nextBtn addTarget:self action:@selector(nicknameClick:) forControlEvents:UIControlEventTouchUpInside];
-            self.curButton = nextBtn;
-            self.curTextFields = @[nicknameField];
-        }
-            break;
-        case RegisterProgressSex:
-        {
-            self.manBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-            self.manBtn.frame = CGRectMake(0, 0, 100, 100);
-            [self.manBtn addTarget:self action:@selector(manBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-            [self.actionView addSubview:self.manBtn];
-            self.womanBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-            self.womanBtn.frame = CGRectMake(0, 0, 100, 100);
-            [self.womanBtn addTarget:self action:@selector(womanBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-            [self.actionView addSubview:self.womanBtn];
-            // check self.manBtn.selected or womanBtn.selected
-            UIButton *nextBtn = [self customButtonWithOffsetY:44 + 25];
-            [self.actionView addSubview:nextBtn];
-            [nextBtn setTitle:@"下一步" forState:UIControlStateNormal];
-            [nextBtn addTarget:self action:@selector(sexClick:) forControlEvents:UIControlEventTouchUpInside];
-            nextBtn.enabled = YES;
-            nextBtn.backgroundColor = COLOR_THEME;
-            self.curButton = nextBtn;
-            self.curTextFields = nil;
-        }
-            break;
-        case RegisterProgressBirthdate:
-        {
-            UITextField *birthdateField = [self customTextFieldWithOffsetY:0];
-            [self.actionView addSubview:birthdateField];
-            UIButton *nextBtn = [self customButtonWithOffsetY:44 + 25];
-            [self.actionView addSubview:nextBtn];
-            [nextBtn setTitle:@"下一步" forState:UIControlStateNormal];
-            [nextBtn addTarget:self action:@selector(birthdateClick:) forControlEvents:UIControlEventTouchUpInside];
-            self.curButton = nextBtn;
-            self.curTextFields = @[birthdateField];
         }
             break;
         default:

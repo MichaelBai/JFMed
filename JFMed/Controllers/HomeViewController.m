@@ -11,6 +11,7 @@
 #import "NewsTableViewCell.h"
 #import "NewsViewController.h"
 #import "DoctorsViewController.h"
+#import "MessageListViewController.h"
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -25,25 +26,25 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    [kAppDelegate showLogin];
+    [kAppDelegate showLogin];
     self.title = @"脊诊室";
     
-    [self addLeftBarButtonWithTitle:@"通知" image:nil backgroundImage:nil action:nil];
+    [self addLeftBarButtonWithTitle:@"通知" image:nil backgroundImage:nil action:@selector(gotoMessageVC)];
     [self addRightBarButtonWithTitle:@"我的" image:nil backgroundImage:nil action:nil];
     
-//    UIButton *checkBtn = [UIButton new];
-//    [checkBtn setTitle:@"脊柱自查" forState:UIControlStateNormal];
-//    [checkBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//    [checkBtn addTarget:self action:@selector(gotoCheck) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:checkBtn];
-//    
-//    [checkBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.center.equalTo(@0);
-//    }];
+    UIButton *checkBtn = [UIButton new];
+    [checkBtn setTitle:@"脊柱自查" forState:UIControlStateNormal];
+    [checkBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [checkBtn addTarget:self action:@selector(gotoCheck) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:checkBtn];
     
-    _scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:_scrollView];
-    [self setupScrollView];
+    [checkBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(@0);
+    }];
+    
+//    _scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+//    [self.view addSubview:_scrollView];
+//    [self setupScrollView];
 }
 
 - (void)setupScrollView
@@ -127,6 +128,12 @@
     offsetY += 118;
     
     _scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, offsetY);
+}
+
+- (void)gotoMessageVC
+{
+    MessageListViewController *messageVC = [[MessageListViewController alloc] init];
+    [self.navigationController pushViewController:messageVC animated:YES];
 }
 
 - (void)gotoNewsVC

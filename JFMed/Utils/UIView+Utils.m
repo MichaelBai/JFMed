@@ -17,4 +17,11 @@
     [self addGestureRecognizer:tapGesture];
 }
 
+- (void)removeAllSubViews
+{
+    for (UIView *subView in self.subviews) {
+        [subView removeFromSuperview];
+    }
+}
+
 @end

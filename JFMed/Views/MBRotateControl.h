@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MBRotateDelegate
+
+- (void)angleDidChangeTo:(CGFloat)angle;
+
+@end
+
 @interface MBRotateControl : UIControl
+
+@property (nonatomic, weak) id delegate;
 
 @end

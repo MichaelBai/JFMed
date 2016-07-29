@@ -13,6 +13,7 @@
 		4C1CED841D3D3217003D599A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C1CED831D3D3217003D599A /* Images.xcassets */; };
 		4C1CED871D3D3217003D599A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C1CED851D3D3217003D599A /* LaunchScreen.xib */; };
 		4C1CED931D3D3218003D599A /* JFMedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1CED921D3D3218003D599A /* JFMedTests.m */; };
+		4C7A8D411D4B8C5D00920CF4 /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A8D401D4B8C5D00920CF4 /* ForgotPasswordViewController.m */; };
 		4CBB1D8F1D3EFF8900357B9E /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1D8E1D3EFF8900357B9E /* WelcomeViewController.m */; };
 		4CBB1D941D3F039700357B9E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1D931D3F039700357B9E /* HomeViewController.m */; };
 		4CBB1D9E1D3FB4EE00357B9E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1D9D1D3FB4EE00357B9E /* LoginViewController.m */; };
@@ -27,6 +28,10 @@
 		4CBB1DBB1D45056A00357B9E /* MBTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DBA1D45056A00357B9E /* MBTabView.m */; };
 		4CBB1DBE1D4506ED00357B9E /* NSString+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DBD1D4506ED00357B9E /* NSString+Utility.m */; };
 		4CBB1DC11D459C2C00357B9E /* DoctorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DC01D459C2C00357B9E /* DoctorTableViewCell.m */; };
+		4CBB1DC41D464FA900357B9E /* MessageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DC31D464FA900357B9E /* MessageListViewController.m */; };
+		4CBB1DC71D46503A00357B9E /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DC61D46503A00357B9E /* MessageTableViewCell.m */; };
+		4CBB1DCA1D465E8700357B9E /* LoginProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DC91D465E8700357B9E /* LoginProgressView.m */; };
+		4CBB1DCD1D46E5FC00357B9E /* CommonUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DCC1D46E5FC00357B9E /* CommonUtility.m */; };
 		B7F8044FA31BC795CDCCD38E /* libPods-JFMed.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A542EC6CFDB341B1E4CF27C4 /* libPods-JFMed.a */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +57,8 @@
 		4C1CED8C1D3D3218003D599A /* JFMedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JFMedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C1CED911D3D3218003D599A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C1CED921D3D3218003D599A /* JFMedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFMedTests.m; sourceTree = "<group>"; };
+		4C7A8D3F1D4B8C5D00920CF4 /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForgotPasswordViewController.h; path = JFMed/Controllers/ForgotPasswordViewController.h; sourceTree = SOURCE_ROOT; };
+		4C7A8D401D4B8C5D00920CF4 /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForgotPasswordViewController.m; path = JFMed/Controllers/ForgotPasswordViewController.m; sourceTree = SOURCE_ROOT; };
 		4CBB1D8D1D3EFF8900357B9E /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		4CBB1D8E1D3EFF8900357B9E /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		4CBB1D901D3F01A600357B9E /* Const.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
@@ -82,6 +89,14 @@
 		4CBB1DBD1D4506ED00357B9E /* NSString+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utility.m"; sourceTree = "<group>"; };
 		4CBB1DBF1D459C2C00357B9E /* DoctorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorTableViewCell.h; sourceTree = "<group>"; };
 		4CBB1DC01D459C2C00357B9E /* DoctorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorTableViewCell.m; sourceTree = "<group>"; };
+		4CBB1DC21D464FA900357B9E /* MessageListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageListViewController.h; path = JFMed/Controllers/MessageListViewController.h; sourceTree = SOURCE_ROOT; };
+		4CBB1DC31D464FA900357B9E /* MessageListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageListViewController.m; path = JFMed/Controllers/MessageListViewController.m; sourceTree = SOURCE_ROOT; };
+		4CBB1DC51D46503A00357B9E /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
+		4CBB1DC61D46503A00357B9E /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewCell.m; sourceTree = "<group>"; };
+		4CBB1DC81D465E8700357B9E /* LoginProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginProgressView.h; sourceTree = "<group>"; };
+		4CBB1DC91D465E8700357B9E /* LoginProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginProgressView.m; sourceTree = "<group>"; };
+		4CBB1DCB1D46E5FC00357B9E /* CommonUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtility.h; sourceTree = "<group>"; };
+		4CBB1DCC1D46E5FC00357B9E /* CommonUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtility.m; sourceTree = "<group>"; };
 		60E5C448BFFCB28C46F1EAAA /* Pods-JFMed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JFMed.release.xcconfig"; path = "Pods/Target Support Files/Pods-JFMed/Pods-JFMed.release.xcconfig"; sourceTree = "<group>"; };
 		6CEF057282CF59FBEF290FD8 /* Pods-JFMed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JFMed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JFMed/Pods-JFMed.debug.xcconfig"; sourceTree = "<group>"; };
 		A542EC6CFDB341B1E4CF27C4 /* libPods-JFMed.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JFMed.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,12 +204,16 @@
 				4CBB1D9D1D3FB4EE00357B9E /* LoginViewController.m */,
 				4CBB1D9F1D3FB4F800357B9E /* RegisterViewController.h */,
 				4CBB1DA01D3FB4F800357B9E /* RegisterViewController.m */,
+				4C7A8D3F1D4B8C5D00920CF4 /* ForgotPasswordViewController.h */,
+				4C7A8D401D4B8C5D00920CF4 /* ForgotPasswordViewController.m */,
 				4CBB1DA21D426D5000357B9E /* SelfCheckViewController.h */,
 				4CBB1DA31D426D5000357B9E /* SelfCheckViewController.m */,
 				4CBB1DB01D44FDB800357B9E /* NewsViewController.h */,
 				4CBB1DB11D44FDB800357B9E /* NewsViewController.m */,
 				4CBB1DB31D44FDCD00357B9E /* DoctorsViewController.h */,
 				4CBB1DB41D44FDCD00357B9E /* DoctorsViewController.m */,
+				4CBB1DC21D464FA900357B9E /* MessageListViewController.h */,
+				4CBB1DC31D464FA900357B9E /* MessageListViewController.m */,
 			);
 			name = Controllers;
 			path = controllers;
@@ -211,6 +230,10 @@
 				4CBB1DAA1D44B89000357B9E /* NewsTableViewCell.m */,
 				4CBB1DBF1D459C2C00357B9E /* DoctorTableViewCell.h */,
 				4CBB1DC01D459C2C00357B9E /* DoctorTableViewCell.m */,
+				4CBB1DC51D46503A00357B9E /* MessageTableViewCell.h */,
+				4CBB1DC61D46503A00357B9E /* MessageTableViewCell.m */,
+				4CBB1DC81D465E8700357B9E /* LoginProgressView.h */,
+				4CBB1DC91D465E8700357B9E /* LoginProgressView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -218,6 +241,8 @@
 		4CBB1DAC1D44EC5D00357B9E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4CBB1DCB1D46E5FC00357B9E /* CommonUtility.h */,
+				4CBB1DCC1D46E5FC00357B9E /* CommonUtility.m */,
 				4CBB1DBC1D4506ED00357B9E /* NSString+Utility.h */,
 				4CBB1DBD1D4506ED00357B9E /* NSString+Utility.m */,
 				4CBB1DAD1D44EC9B00357B9E /* UIViewController+Utils.h */,
@@ -399,12 +424,17 @@
 				4CBB1DB21D44FDB800357B9E /* NewsViewController.m in Sources */,
 				4CBB1DAB1D44B89000357B9E /* NewsTableViewCell.m in Sources */,
 				4CBB1D8F1D3EFF8900357B9E /* WelcomeViewController.m in Sources */,
+				4CBB1DC41D464FA900357B9E /* MessageListViewController.m in Sources */,
+				4CBB1DCD1D46E5FC00357B9E /* CommonUtility.m in Sources */,
+				4CBB1DC71D46503A00357B9E /* MessageTableViewCell.m in Sources */,
 				4CBB1D941D3F039700357B9E /* HomeViewController.m in Sources */,
 				4CBB1DBB1D45056A00357B9E /* MBTabView.m in Sources */,
 				4CBB1DAF1D44EC9B00357B9E /* UIViewController+Utils.m in Sources */,
 				4CBB1DBE1D4506ED00357B9E /* NSString+Utility.m in Sources */,
 				4CBB1DC11D459C2C00357B9E /* DoctorTableViewCell.m in Sources */,
+				4C7A8D411D4B8C5D00920CF4 /* ForgotPasswordViewController.m in Sources */,
 				4CBB1D9E1D3FB4EE00357B9E /* LoginViewController.m in Sources */,
+				4CBB1DCA1D465E8700357B9E /* LoginProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

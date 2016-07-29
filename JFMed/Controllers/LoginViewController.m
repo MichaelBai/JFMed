@@ -7,34 +7,136 @@
 //
 
 #import "LoginViewController.h"
+#import "RegisterViewController.h"
+#import "ForgotPasswordViewController.h"
 
 @interface LoginViewController ()
+
+@property (nonatomic, strong) NSArray *curTextFields;
+@property (nonatomic, strong) UIButton *curButton;
 
 @end
 
 @implementation LoginViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.title = @"登录";
+    
+    CGFloat offsetY = NAV_HEIGHT + 25;
+    UITextField *phoneField = [self customTextFieldWithOffsetY:offsetY];
+    [self.view addSubview:phoneField];
+    offsetY += 44 + 25;
+    UITextField *pwdField = [self customTextFieldWithOffsetY:offsetY];
+    [self.view addSubview:pwdField];
+    offsetY += 44 + 25;
+    UIButton *nextBtn = [self customButtonWithOffsetY:offsetY];
+    [self.view addSubview:nextBtn];
+    [nextBtn setTitle:@"登 录" forState:UIControlStateNormal];
+    [nextBtn addTarget:self action:@selector(loginClick:) forControlEvents:UIControlEventTouchUpInside];
+    self.curButton = nextBtn;
+    self.curTextFields = @[phoneField, pwdField];
+    
+    offsetY += 44 + 26;
+    UIButton *forgotPwdBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.view addSubview:forgotPwdBtn];
+    forgotPwdBtn.frame = CGRectMake(10, offsetY, 100, 20);
+    [forgotPwdBtn setTitle:@"密码忘了？" forState:UIControlStateNormal];
+    [forgotPwdBtn setTitleColor:HEXColor(0x98a0b4) forState:UIControlStateNormal];
+    forgotPwdBtn.titleLabel.font = FONT_(15);
+    [forgotPwdBtn addTarget:self action:@selector(gotoForgotPwdVC:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton *registerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.view addSubview:registerBtn];
+    registerBtn.frame = CGRectMake(SCREEN_WIDTH-120-10, offsetY, 120, 20);
+    [registerBtn setTitle:@"没有账户？去注册" forState:UIControlStateNormal];
+    [registerBtn setTitleColor:HEXColor(0x98a0b4) forState:UIControlStateNormal];
+    registerBtn.titleLabel.font = FONT_(15);
+    registerBtn.titleLabel.textAlignment = NSTextAlignmentRight;
+    [registerBtn addTarget:self action:@selector(gotoRegisterVC:) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)gotoForgotPwdVC:(UIButton *)sender
+{
+    ForgotPasswordViewController *forgotVC = [[ForgotPasswordViewController alloc] init];
+    [self.navigationController pushViewController:forgotVC animated:YES];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)gotoRegisterVC:(UIButton *)sender
+{
+    RegisterViewController *registerVC = [[RegisterViewController alloc] init];
+    [self.navigationController pushViewController:registerVC animated:YES];
 }
-*/
+
+- (void)loginClick:(UIButton *)sender
+{
+    NSLog(@"Login!");
+}
+
+- (void)textFieldDidChange:(UITextField *)textField
+{
+    self.curButton.enabled = YES;
+    self.curButton.backgroundColor = COLOR_THEME;
+    for (UITextField *textField in self.curTextFields) {
+        if (textField.text.length == 0) {
+            self.curButton.enabled = NO;
+            self.curButton.backgroundColor = HEXColor(0xbfccd5);
+            break;
+        }
+    }
+}
+
+- (UITextField *)customTextFieldWithOffsetY:(CGFloat)offsetY
+{
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(10, offsetY, SCREEN_WIDTH - 20, 44)];
+    textField.backgroundColor = HEXColor(0xf3f6fb);
+    textField.layer.cornerRadius = 44/2;
+    textField.layer.masksToBounds = YES;
+    textField.placeholder = @"请输入手机号";
+    [textField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 44)];
+    textField.leftView = paddingView;
+    textField.leftViewMode = UITextFieldViewModeAlways;
+    
+    UIImageView *innerShadowView = [[UIImageView alloc] initWithFrame:textField.bounds];
+    
+    innerShadowView.contentMode = UIViewContentModeScaleToFill;
+    innerShadowView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    [textField addSubview:innerShadowView];
+    
+    [innerShadowView.layer setCornerRadius:44/2];
+    [innerShadowView.layer setMasksToBounds:YES];
+    
+    [innerShadowView.layer setBorderColor:HEXColor(0xdee3e9).CGColor];
+    [innerShadowView.layer setShadowColor:HEXColor(0xdee3e9).CGColor];
+    [innerShadowView.layer setBorderWidth:1.0f];
+    
+    [innerShadowView.layer setShadowOffset:CGSizeMake(0, 0)];
+    [innerShadowView.layer setShadowOpacity:1.0];
+    
+    // this is the inner shadow thickness
+    [innerShadowView.layer setShadowRadius:1.5];
+    
+    return textField;
+}
+
+- (UIButton *)customButtonWithOffsetY:(CGFloat)offsetY
+{
+    UIButton *submitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    submitBtn.frame = CGRectMake(10, offsetY, SCREEN_WIDTH-20, 44);
+    [submitBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    submitBtn.layer.cornerRadius = 44/2;
+    submitBtn.layer.masksToBounds = YES;
+    // need customize when calling
+    submitBtn.backgroundColor = HEXColor(0xbfccd5);
+    submitBtn.enabled = NO;
+    
+    return submitBtn;
+}
 
 @end
