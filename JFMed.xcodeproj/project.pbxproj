@@ -13,6 +13,10 @@
 		4C1CED841D3D3217003D599A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C1CED831D3D3217003D599A /* Images.xcassets */; };
 		4C1CED871D3D3217003D599A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C1CED851D3D3217003D599A /* LaunchScreen.xib */; };
 		4C1CED931D3D3218003D599A /* JFMedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1CED921D3D3218003D599A /* JFMedTests.m */; };
+		4C2A15491D4CBD9200654D8A /* PersonalEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A15481D4CBD9200654D8A /* PersonalEditViewController.m */; };
+		4C2A154D1D4CC16700654D8A /* DoctorProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A154C1D4CC16700654D8A /* DoctorProfileViewController.m */; };
+		4C2A15501D4CF75C00654D8A /* DoctorInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A154F1D4CF75C00654D8A /* DoctorInfoViewController.m */; };
+		4C2A15531D4CF7A000654D8A /* DoctorWorkTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A15521D4CF7A000654D8A /* DoctorWorkTimeViewController.m */; };
 		4C7A8D411D4B8C5D00920CF4 /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A8D401D4B8C5D00920CF4 /* ForgotPasswordViewController.m */; };
 		4CBB1D8F1D3EFF8900357B9E /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1D8E1D3EFF8900357B9E /* WelcomeViewController.m */; };
 		4CBB1D941D3F039700357B9E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1D931D3F039700357B9E /* HomeViewController.m */; };
@@ -32,6 +36,8 @@
 		4CBB1DC71D46503A00357B9E /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DC61D46503A00357B9E /* MessageTableViewCell.m */; };
 		4CBB1DCA1D465E8700357B9E /* LoginProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DC91D465E8700357B9E /* LoginProgressView.m */; };
 		4CBB1DCD1D46E5FC00357B9E /* CommonUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DCC1D46E5FC00357B9E /* CommonUtility.m */; };
+		4CD9A16B1D4C3578000C613C /* PersonalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD9A16A1D4C3578000C613C /* PersonalTableViewCell.m */; };
+		4CD9A16F1D4C3C84000C613C /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD9A16E1D4C3C84000C613C /* PersonalViewController.m */; };
 		B7F8044FA31BC795CDCCD38E /* libPods-JFMed.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A542EC6CFDB341B1E4CF27C4 /* libPods-JFMed.a */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +63,14 @@
 		4C1CED8C1D3D3218003D599A /* JFMedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JFMedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C1CED911D3D3218003D599A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C1CED921D3D3218003D599A /* JFMedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFMedTests.m; sourceTree = "<group>"; };
+		4C2A15471D4CBD9200654D8A /* PersonalEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalEditViewController.h; sourceTree = "<group>"; };
+		4C2A15481D4CBD9200654D8A /* PersonalEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalEditViewController.m; sourceTree = "<group>"; };
+		4C2A154B1D4CC16700654D8A /* DoctorProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DoctorProfileViewController.h; path = JFMed/Controllers/DoctorProfileViewController.h; sourceTree = SOURCE_ROOT; };
+		4C2A154C1D4CC16700654D8A /* DoctorProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DoctorProfileViewController.m; path = JFMed/Controllers/DoctorProfileViewController.m; sourceTree = SOURCE_ROOT; };
+		4C2A154E1D4CF75C00654D8A /* DoctorInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DoctorInfoViewController.h; path = JFMed/Controllers/DoctorInfoViewController.h; sourceTree = SOURCE_ROOT; };
+		4C2A154F1D4CF75C00654D8A /* DoctorInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DoctorInfoViewController.m; path = JFMed/Controllers/DoctorInfoViewController.m; sourceTree = SOURCE_ROOT; };
+		4C2A15511D4CF7A000654D8A /* DoctorWorkTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DoctorWorkTimeViewController.h; path = JFMed/Controllers/DoctorWorkTimeViewController.h; sourceTree = SOURCE_ROOT; };
+		4C2A15521D4CF7A000654D8A /* DoctorWorkTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DoctorWorkTimeViewController.m; path = JFMed/Controllers/DoctorWorkTimeViewController.m; sourceTree = SOURCE_ROOT; };
 		4C7A8D3F1D4B8C5D00920CF4 /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForgotPasswordViewController.h; path = JFMed/Controllers/ForgotPasswordViewController.h; sourceTree = SOURCE_ROOT; };
 		4C7A8D401D4B8C5D00920CF4 /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForgotPasswordViewController.m; path = JFMed/Controllers/ForgotPasswordViewController.m; sourceTree = SOURCE_ROOT; };
 		4CBB1D8D1D3EFF8900357B9E /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
@@ -97,6 +111,10 @@
 		4CBB1DC91D465E8700357B9E /* LoginProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginProgressView.m; sourceTree = "<group>"; };
 		4CBB1DCB1D46E5FC00357B9E /* CommonUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtility.h; sourceTree = "<group>"; };
 		4CBB1DCC1D46E5FC00357B9E /* CommonUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtility.m; sourceTree = "<group>"; };
+		4CD9A1691D4C3578000C613C /* PersonalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalTableViewCell.h; sourceTree = "<group>"; };
+		4CD9A16A1D4C3578000C613C /* PersonalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalTableViewCell.m; sourceTree = "<group>"; };
+		4CD9A16D1D4C3C84000C613C /* PersonalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalViewController.h; sourceTree = "<group>"; };
+		4CD9A16E1D4C3C84000C613C /* PersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalViewController.m; sourceTree = "<group>"; };
 		60E5C448BFFCB28C46F1EAAA /* Pods-JFMed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JFMed.release.xcconfig"; path = "Pods/Target Support Files/Pods-JFMed/Pods-JFMed.release.xcconfig"; sourceTree = "<group>"; };
 		6CEF057282CF59FBEF290FD8 /* Pods-JFMed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JFMed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JFMed/Pods-JFMed.debug.xcconfig"; sourceTree = "<group>"; };
 		A542EC6CFDB341B1E4CF27C4 /* libPods-JFMed.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JFMed.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +214,7 @@
 		4CBB1D8C1D3EFE7600357B9E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4CD9A16C1D4C3C84000C613C /* Personal */,
 				4CBB1D8D1D3EFF8900357B9E /* WelcomeViewController.h */,
 				4CBB1D8E1D3EFF8900357B9E /* WelcomeViewController.m */,
 				4CBB1D921D3F039700357B9E /* HomeViewController.h */,
@@ -214,6 +233,12 @@
 				4CBB1DB41D44FDCD00357B9E /* DoctorsViewController.m */,
 				4CBB1DC21D464FA900357B9E /* MessageListViewController.h */,
 				4CBB1DC31D464FA900357B9E /* MessageListViewController.m */,
+				4C2A154B1D4CC16700654D8A /* DoctorProfileViewController.h */,
+				4C2A154C1D4CC16700654D8A /* DoctorProfileViewController.m */,
+				4C2A154E1D4CF75C00654D8A /* DoctorInfoViewController.h */,
+				4C2A154F1D4CF75C00654D8A /* DoctorInfoViewController.m */,
+				4C2A15511D4CF7A000654D8A /* DoctorWorkTimeViewController.h */,
+				4C2A15521D4CF7A000654D8A /* DoctorWorkTimeViewController.m */,
 			);
 			name = Controllers;
 			path = controllers;
@@ -234,6 +259,8 @@
 				4CBB1DC61D46503A00357B9E /* MessageTableViewCell.m */,
 				4CBB1DC81D465E8700357B9E /* LoginProgressView.h */,
 				4CBB1DC91D465E8700357B9E /* LoginProgressView.m */,
+				4CD9A1691D4C3578000C613C /* PersonalTableViewCell.h */,
+				4CD9A16A1D4C3578000C613C /* PersonalTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -252,6 +279,18 @@
 			);
 			path = Utils;
 			sourceTree = "<group>";
+		};
+		4CD9A16C1D4C3C84000C613C /* Personal */ = {
+			isa = PBXGroup;
+			children = (
+				4CD9A16D1D4C3C84000C613C /* PersonalViewController.h */,
+				4CD9A16E1D4C3C84000C613C /* PersonalViewController.m */,
+				4C2A15471D4CBD9200654D8A /* PersonalEditViewController.h */,
+				4C2A15481D4CBD9200654D8A /* PersonalEditViewController.m */,
+			);
+			name = Personal;
+			path = JFMed/Controllers/Personal;
+			sourceTree = SOURCE_ROOT;
 		};
 		9DA6889FABD0F0D78A7A57D8 /* Pods */ = {
 			isa = PBXGroup;
@@ -414,16 +453,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C2A15491D4CBD9200654D8A /* PersonalEditViewController.m in Sources */,
 				4CBB1DB81D44FEB300357B9E /* UIView+Utils.m in Sources */,
 				4C1CED7C1D3D3217003D599A /* AppDelegate.m in Sources */,
 				4CBB1DA11D3FB4F800357B9E /* RegisterViewController.m in Sources */,
 				4CBB1DA41D426D5000357B9E /* SelfCheckViewController.m in Sources */,
+				4C2A15531D4CF7A000654D8A /* DoctorWorkTimeViewController.m in Sources */,
+				4C2A15501D4CF75C00654D8A /* DoctorInfoViewController.m in Sources */,
+				4C2A154D1D4CC16700654D8A /* DoctorProfileViewController.m in Sources */,
 				4CBB1DB51D44FDCD00357B9E /* DoctorsViewController.m in Sources */,
 				4CBB1DA81D426E0D00357B9E /* MBRotateControl.m in Sources */,
 				4C1CED791D3D3217003D599A /* main.m in Sources */,
 				4CBB1DB21D44FDB800357B9E /* NewsViewController.m in Sources */,
 				4CBB1DAB1D44B89000357B9E /* NewsTableViewCell.m in Sources */,
 				4CBB1D8F1D3EFF8900357B9E /* WelcomeViewController.m in Sources */,
+				4CD9A16F1D4C3C84000C613C /* PersonalViewController.m in Sources */,
+				4CD9A16B1D4C3578000C613C /* PersonalTableViewCell.m in Sources */,
 				4CBB1DC41D464FA900357B9E /* MessageListViewController.m in Sources */,
 				4CBB1DCD1D46E5FC00357B9E /* CommonUtility.m in Sources */,
 				4CBB1DC71D46503A00357B9E /* MessageTableViewCell.m in Sources */,

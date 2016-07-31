@@ -12,6 +12,8 @@
 #import "NewsViewController.h"
 #import "DoctorsViewController.h"
 #import "MessageListViewController.h"
+#import "PersonalViewController.h"
+#import "DoctorProfileViewController.h"
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -26,25 +28,25 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [kAppDelegate showLogin];
+//    [kAppDelegate showLogin];
     self.title = @"脊诊室";
     
     [self addLeftBarButtonWithTitle:@"通知" image:nil backgroundImage:nil action:@selector(gotoMessageVC)];
-    [self addRightBarButtonWithTitle:@"我的" image:nil backgroundImage:nil action:nil];
+    [self addRightBarButtonWithTitle:@"我的" image:nil backgroundImage:nil action:@selector(gotoPersonalVC)];
     
-    UIButton *checkBtn = [UIButton new];
-    [checkBtn setTitle:@"脊柱自查" forState:UIControlStateNormal];
-    [checkBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [checkBtn addTarget:self action:@selector(gotoCheck) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:checkBtn];
+//    UIButton *checkBtn = [UIButton new];
+//    [checkBtn setTitle:@"脊柱自查" forState:UIControlStateNormal];
+//    [checkBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//    [checkBtn addTarget:self action:@selector(gotoCheck) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:checkBtn];
+//    
+//    [checkBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.center.equalTo(@0);
+//    }];
     
-    [checkBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(@0);
-    }];
-    
-//    _scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-//    [self.view addSubview:_scrollView];
-//    [self setupScrollView];
+    _scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:_scrollView];
+    [self setupScrollView];
 }
 
 - (void)setupScrollView
@@ -106,6 +108,7 @@
         CGFloat singleDoctorViewWidth = (SCREEN_WIDTH-20)/3;
         UIView *singleDoctorView = [[UIView alloc] initWithFrame:CGRectMake(leftOffset, 0, singleDoctorViewWidth, 118)];
         [doctorsView addSubview:singleDoctorView];
+        [singleDoctorView addTapAction:@selector(gotoDoctorProfileVC) target:self];
         UIImageView *doctorImage = [[UIImageView alloc] initWithFrame:CGRectMake((singleDoctorViewWidth-55)/2, 12, 55, 55)];
         [doctorImage sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"docHead"]];
         [singleDoctorView addSubview:doctorImage];
@@ -136,6 +139,13 @@
     [self.navigationController pushViewController:messageVC animated:YES];
 }
 
+- (void)gotoPersonalVC
+{
+//    [kAppDelegate showLogin];
+    PersonalViewController *personalVC = [[PersonalViewController alloc] init];
+    [self.navigationController pushViewController:personalVC animated:YES];
+}
+
 - (void)gotoNewsVC
 {
     NewsViewController *newsVC = [[NewsViewController alloc] init];
@@ -152,6 +162,12 @@
 {
     SelfCheckViewController *selfCheckVC = [[SelfCheckViewController alloc] init];
     [self.navigationController pushViewController:selfCheckVC animated:YES];
+}
+
+- (void)gotoDoctorProfileVC
+{
+    DoctorProfileViewController *docProfileVC = [[DoctorProfileViewController alloc] init];
+    [self.navigationController pushViewController:docProfileVC animated:YES];
 }
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource
