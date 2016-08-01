@@ -27,7 +27,7 @@ const CGFloat kInvalidDeltaAngle = 1024;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor grayColor];
+//        self.backgroundColor = [UIColor grayColor];
         
         self.container = [[UIImageView alloc] initWithFrame:self.bounds];
         [self addSubview:self.container];

@@ -7,6 +7,9 @@ target 'JFMed' do
 
 pod 'AFNetworking',                     '~> 2.5.4'
 pod 'SDWebImage',                       '~> 3.8'
+pod 'Mantle',                           '~> 2.0'
+pod 'libextobjc',                       '~> 0.4'
+pod 'LLSimpleCamera',                   '~> 4.1'
 pod 'Masonry'
 pod 'OHHTTPStubs'
 

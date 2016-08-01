@@ -17,6 +17,17 @@
 		4C2A154D1D4CC16700654D8A /* DoctorProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A154C1D4CC16700654D8A /* DoctorProfileViewController.m */; };
 		4C2A15501D4CF75C00654D8A /* DoctorInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A154F1D4CF75C00654D8A /* DoctorInfoViewController.m */; };
 		4C2A15531D4CF7A000654D8A /* DoctorWorkTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A15521D4CF7A000654D8A /* DoctorWorkTimeViewController.m */; };
+		4C2A155C1D4D875E00654D8A /* doctor_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C2A15551D4D875E00654D8A /* doctor_list.json */; };
+		4C2A155D1D4D875E00654D8A /* doctor_page.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C2A15561D4D875E00654D8A /* doctor_page.json */; };
+		4C2A155E1D4D875E00654D8A /* doctor_visit_time.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C2A15571D4D875E00654D8A /* doctor_visit_time.json */; };
+		4C2A155F1D4D875E00654D8A /* doctors_group.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C2A15581D4D875E00654D8A /* doctors_group.json */; };
+		4C2A15601D4D875E00654D8A /* home_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C2A15591D4D875E00654D8A /* home_data.json */; };
+		4C2A15611D4D875E00654D8A /* news_group.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C2A155A1D4D875E00654D8A /* news_group.json */; };
+		4C2A15621D4D875E00654D8A /* news_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C2A155B1D4D875E00654D8A /* news_list.json */; };
+		4C2A15671D4D9D0C00654D8A /* NetworkCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A15661D4D9D0C00654D8A /* NetworkCenter.m */; };
+		4C2A156A1D4DB89200654D8A /* Doctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A15691D4DB89200654D8A /* Doctor.m */; };
+		4C2A15721D4F6FFD00654D8A /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A156F1D4F6FFD00654D8A /* UIScrollView+SVInfiniteScrolling.m */; };
+		4C2A15731D4F6FFD00654D8A /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A15711D4F6FFD00654D8A /* UIScrollView+SVPullToRefresh.m */; };
 		4C7A8D411D4B8C5D00920CF4 /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A8D401D4B8C5D00920CF4 /* ForgotPasswordViewController.m */; };
 		4CBB1D8F1D3EFF8900357B9E /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1D8E1D3EFF8900357B9E /* WelcomeViewController.m */; };
 		4CBB1D941D3F039700357B9E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1D931D3F039700357B9E /* HomeViewController.m */; };
@@ -71,6 +82,22 @@
 		4C2A154F1D4CF75C00654D8A /* DoctorInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DoctorInfoViewController.m; path = JFMed/Controllers/DoctorInfoViewController.m; sourceTree = SOURCE_ROOT; };
 		4C2A15511D4CF7A000654D8A /* DoctorWorkTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DoctorWorkTimeViewController.h; path = JFMed/Controllers/DoctorWorkTimeViewController.h; sourceTree = SOURCE_ROOT; };
 		4C2A15521D4CF7A000654D8A /* DoctorWorkTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DoctorWorkTimeViewController.m; path = JFMed/Controllers/DoctorWorkTimeViewController.m; sourceTree = SOURCE_ROOT; };
+		4C2A15551D4D875E00654D8A /* doctor_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = doctor_list.json; sourceTree = "<group>"; };
+		4C2A15561D4D875E00654D8A /* doctor_page.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = doctor_page.json; sourceTree = "<group>"; };
+		4C2A15571D4D875E00654D8A /* doctor_visit_time.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = doctor_visit_time.json; sourceTree = "<group>"; };
+		4C2A15581D4D875E00654D8A /* doctors_group.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = doctors_group.json; sourceTree = "<group>"; };
+		4C2A15591D4D875E00654D8A /* home_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = home_data.json; sourceTree = "<group>"; };
+		4C2A155A1D4D875E00654D8A /* news_group.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news_group.json; sourceTree = "<group>"; };
+		4C2A155B1D4D875E00654D8A /* news_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news_list.json; sourceTree = "<group>"; };
+		4C2A15651D4D9D0C00654D8A /* NetworkCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkCenter.h; sourceTree = "<group>"; };
+		4C2A15661D4D9D0C00654D8A /* NetworkCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkCenter.m; sourceTree = "<group>"; };
+		4C2A15681D4DB89200654D8A /* Doctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Doctor.h; sourceTree = "<group>"; };
+		4C2A15691D4DB89200654D8A /* Doctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Doctor.m; sourceTree = "<group>"; };
+		4C2A156D1D4F6FFD00654D8A /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		4C2A156E1D4F6FFD00654D8A /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		4C2A156F1D4F6FFD00654D8A /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		4C2A15701D4F6FFD00654D8A /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
+		4C2A15711D4F6FFD00654D8A /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		4C7A8D3F1D4B8C5D00920CF4 /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForgotPasswordViewController.h; path = JFMed/Controllers/ForgotPasswordViewController.h; sourceTree = SOURCE_ROOT; };
 		4C7A8D401D4B8C5D00920CF4 /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForgotPasswordViewController.m; path = JFMed/Controllers/ForgotPasswordViewController.m; sourceTree = SOURCE_ROOT; };
 		4CBB1D8D1D3EFF8900357B9E /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
@@ -170,6 +197,10 @@
 		4C1CED751D3D3217003D599A /* JFMed */ = {
 			isa = PBXGroup;
 			children = (
+				4C2A156B1D4F6FFD00654D8A /* Libs */,
+				4C2A15631D4D87CC00654D8A /* Model */,
+				4C2A15641D4D87CC00654D8A /* Network */,
+				4C2A15541D4D875E00654D8A /* Debug */,
 				4CBB1DAC1D44EC5D00357B9E /* Utils */,
 				4CBB1DA51D426DE700357B9E /* Views */,
 				4CBB1D8C1D3EFE7600357B9E /* Controllers */,
@@ -209,6 +240,58 @@
 				4C1CED911D3D3218003D599A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C2A15541D4D875E00654D8A /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				4C2A15551D4D875E00654D8A /* doctor_list.json */,
+				4C2A15561D4D875E00654D8A /* doctor_page.json */,
+				4C2A15571D4D875E00654D8A /* doctor_visit_time.json */,
+				4C2A15581D4D875E00654D8A /* doctors_group.json */,
+				4C2A15591D4D875E00654D8A /* home_data.json */,
+				4C2A155A1D4D875E00654D8A /* news_group.json */,
+				4C2A155B1D4D875E00654D8A /* news_list.json */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		4C2A15631D4D87CC00654D8A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4C2A15681D4DB89200654D8A /* Doctor.h */,
+				4C2A15691D4DB89200654D8A /* Doctor.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4C2A15641D4D87CC00654D8A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4C2A15651D4D9D0C00654D8A /* NetworkCenter.h */,
+				4C2A15661D4D9D0C00654D8A /* NetworkCenter.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4C2A156B1D4F6FFD00654D8A /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				4C2A156C1D4F6FFD00654D8A /* SVPullToRefresh */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		4C2A156C1D4F6FFD00654D8A /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				4C2A156D1D4F6FFD00654D8A /* SVPullToRefresh.h */,
+				4C2A156E1D4F6FFD00654D8A /* UIScrollView+SVInfiniteScrolling.h */,
+				4C2A156F1D4F6FFD00654D8A /* UIScrollView+SVInfiniteScrolling.m */,
+				4C2A15701D4F6FFD00654D8A /* UIScrollView+SVPullToRefresh.h */,
+				4C2A15711D4F6FFD00654D8A /* UIScrollView+SVPullToRefresh.m */,
+			);
+			path = SVPullToRefresh;
 			sourceTree = "<group>";
 		};
 		4CBB1D8C1D3EFE7600357B9E /* Controllers */ = {
@@ -385,8 +468,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C2A15621D4D875E00654D8A /* news_list.json in Resources */,
+				4C2A15601D4D875E00654D8A /* home_data.json in Resources */,
 				4C1CED821D3D3217003D599A /* Main.storyboard in Resources */,
+				4C2A15611D4D875E00654D8A /* news_group.json in Resources */,
+				4C2A155F1D4D875E00654D8A /* doctors_group.json in Resources */,
 				4C1CED871D3D3217003D599A /* LaunchScreen.xib in Resources */,
+				4C2A155D1D4D875E00654D8A /* doctor_page.json in Resources */,
+				4C2A155E1D4D875E00654D8A /* doctor_visit_time.json in Resources */,
+				4C2A155C1D4D875E00654D8A /* doctor_list.json in Resources */,
 				4C1CED841D3D3217003D599A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +548,7 @@
 				4C1CED7C1D3D3217003D599A /* AppDelegate.m in Sources */,
 				4CBB1DA11D3FB4F800357B9E /* RegisterViewController.m in Sources */,
 				4CBB1DA41D426D5000357B9E /* SelfCheckViewController.m in Sources */,
+				4C2A15731D4F6FFD00654D8A /* UIScrollView+SVPullToRefresh.m in Sources */,
 				4C2A15531D4CF7A000654D8A /* DoctorWorkTimeViewController.m in Sources */,
 				4C2A15501D4CF75C00654D8A /* DoctorInfoViewController.m in Sources */,
 				4C2A154D1D4CC16700654D8A /* DoctorProfileViewController.m in Sources */,
@@ -467,10 +558,12 @@
 				4CBB1DB21D44FDB800357B9E /* NewsViewController.m in Sources */,
 				4CBB1DAB1D44B89000357B9E /* NewsTableViewCell.m in Sources */,
 				4CBB1D8F1D3EFF8900357B9E /* WelcomeViewController.m in Sources */,
+				4C2A15721D4F6FFD00654D8A /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				4CD9A16F1D4C3C84000C613C /* PersonalViewController.m in Sources */,
 				4CD9A16B1D4C3578000C613C /* PersonalTableViewCell.m in Sources */,
 				4CBB1DC41D464FA900357B9E /* MessageListViewController.m in Sources */,
 				4CBB1DCD1D46E5FC00357B9E /* CommonUtility.m in Sources */,
+				4C2A156A1D4DB89200654D8A /* Doctor.m in Sources */,
 				4CBB1DC71D46503A00357B9E /* MessageTableViewCell.m in Sources */,
 				4CBB1D941D3F039700357B9E /* HomeViewController.m in Sources */,
 				4CBB1DBB1D45056A00357B9E /* MBTabView.m in Sources */,
@@ -478,6 +571,7 @@
 				4CBB1DBE1D4506ED00357B9E /* NSString+Utility.m in Sources */,
 				4CBB1DC11D459C2C00357B9E /* DoctorTableViewCell.m in Sources */,
 				4C7A8D411D4B8C5D00920CF4 /* ForgotPasswordViewController.m in Sources */,
+				4C2A15671D4D9D0C00654D8A /* NetworkCenter.m in Sources */,
 				4CBB1D9E1D3FB4EE00357B9E /* LoginViewController.m in Sources */,
 				4CBB1DCA1D465E8700357B9E /* LoginProgressView.m in Sources */,
 			);

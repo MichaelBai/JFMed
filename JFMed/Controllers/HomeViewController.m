@@ -34,6 +34,8 @@
     [self addLeftBarButtonWithTitle:@"通知" image:nil backgroundImage:nil action:@selector(gotoMessageVC)];
     [self addRightBarButtonWithTitle:@"我的" image:nil backgroundImage:nil action:@selector(gotoPersonalVC)];
     
+#warning test
+    [self addRightBarButtonWithTitle:@"自查" image:nil backgroundImage:nil action:@selector(gotoCheck)];
 //    UIButton *checkBtn = [UIButton new];
 //    [checkBtn setTitle:@"脊柱自查" forState:UIControlStateNormal];
 //    [checkBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];

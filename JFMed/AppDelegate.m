@@ -18,7 +18,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+#if DEBUG
+    [self debugHTTP];
+#endif
     return YES;
+}
+
+- (void)debugHTTP
+{
+#if DEBUG
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.host isEqualToString:@"127.0.0.1"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        // Stub it with our "wsresponse.json" stub file
+        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFile(@"doctor_list.json",self.class)
+                                                statusCode:200 headers:@{@"Content-Type":@"application/json"}];
+    }];
+#endif
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -32,4 +32,6 @@
 
 #define NAV_HEIGHT 64
 
+#define apiHost                      @"http://127.0.0.1/"
+
 #endif /* Const_h */

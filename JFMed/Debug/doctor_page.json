@@ -1,0 +1,58 @@
+{
+  "result":0,
+  "error_info":"",
+  "data":{
+    "doctor_info":{
+      "avatar":"http://money.gucheng.com/UploadFiles_6503/201508/2015082523214635.jpg",
+      "name":"赵一鸣",
+      "title":"主任医师",
+      "hospital":"北京协和医院",
+      "doctor_id":"123456",
+      "consultation_times":"149",
+      "follow_member_num":56,
+      "publish_article_num":60
+    },
+    "about_article":{
+      "title": "相关文章",
+      "article_list": [
+        {
+          "url": "http://static.i3.xywy.com/cms/20141015/1eb0f5cb008bc21b439653566323f9f517388.jpg",
+          "title": "脊柱侧弯到底是怎么样一种病?是怎么引起的?"
+        },
+        {
+          "url": "http://static.i3.xywy.com/cms/20141015/1eb0f5cb008bc21b439653566323f9f517388.jpg",
+          "title": "脊柱侧弯到底是怎么样一种病?是怎么引起的?"
+        },
+        {
+          "url": "http://static.i3.xywy.com/cms/20141015/1eb0f5cb008bc21b439653566323f9f517388.jpg",
+          "title": "脊柱侧弯到底是怎么样一种病?是怎么引起的?"
+        }
+
+      ]
+    },
+    "publish_paper":{
+      "title":"发表论文",
+      "paper_list": [
+        {
+          "url": "http://static.i3.xywy.com/cms/20141015/1eb0f5cb008bc21b439653566323f9f517388.jpg",
+          "title": "脊柱侧弯到底是怎么样一种病?是怎么引起的?",
+          "time":"2016年7月25日23:21:021",
+          "magazine":"《骨科研究》"
+        },
+        {
+          "url": "http://static.i3.xywy.com/cms/20141015/1eb0f5cb008bc21b439653566323f9f517388.jpg",
+          "title": "脊柱侧弯到底是怎么样一种病?是怎么引起的?",
+          "time":"2016年7月25日23:21:021",
+          "magazine":"《骨科研究》"
+        },
+        {
+          "url": "http://static.i3.xywy.com/cms/20141015/1eb0f5cb008bc21b439653566323f9f517388.jpg",
+          "title": "脊柱侧弯到底是怎么样一种病?是怎么引起的?",
+          "time":"2016年7月25日23:21:021",
+          "magazine":"《骨科研究》"
+        }
+
+      ]
+    }
+  }
+}

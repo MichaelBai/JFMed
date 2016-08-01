@@ -9,11 +9,13 @@
 #import "DoctorsViewController.h"
 #import "MBTabView.h"
 #import "DoctorTableViewCell.h"
+#import "Doctor.h"
 
 @interface DoctorsViewController () <UITableViewDelegate, UITableViewDataSource, MBTabViewButtonClickDelegate>
 
 @property (nonatomic, strong) MBTabView *tabView;
 @property (nonatomic, strong) NSMutableArray *tableViews;
+@property (nonatomic, strong) NSMutableArray *doctors;
 
 @end
 
@@ -40,8 +42,29 @@
         tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [self.view addSubview:tableView];
         [_tableViews addObject:tableView];
+        
+        @weakify(tableView);
+        [tableView addPullToRefreshWithActionHandler:^{
+            @strongify(tableView);
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [tableView.pullToRefreshView stopAnimating];
+                [tableView reloadData];
+            });
+        }];
+        [tableView.pullToRefreshView setTitle:@"继续下拉刷新" forState:SVPullToRefreshStateStopped];
+        [tableView.pullToRefreshView setTitle:@"松开即可刷新" forState:SVPullToRefreshStateTriggered];
+        [tableView.pullToRefreshView setTitle:@"正在刷新..." forState:SVPullToRefreshStateLoading];
     }
     [self.view bringSubviewToFront:_tableViews.firstObject];
+    
+    self.doctors = [NSMutableArray array];
+    [[NetworkCenter sharedCenter] postWithApiPath:@"doctor/list" requestParams:nil handler:^(id response, NSError *error, BOOL updatePage) {
+        NSLog(@"%@", response);
+        [response[@"doctor_list"] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            Doctor *doc = [[Doctor alloc] initWithDictionary:obj error:nil];
+            [self.doctors addObject:doc];
+        }];
+    }];
 }
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource
