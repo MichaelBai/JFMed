@@ -10,6 +10,7 @@
 #define Const_h
 
 #define kAppDelegate                    ((AppDelegate*)[[UIApplication sharedApplication] delegate])
+#define NETWORK                         [NetworkCenter sharedCenter]
 
 //十六色值
 #define HEXColor(c)                     [UIColor colorWithRed:((c>>16)&0xFF)/255.0 green:((c>>8)&0xFF)/255.0 blue:(c&0xFF)/255.0 alpha:1.0]
@@ -32,6 +33,6 @@
 
 #define NAV_HEIGHT 64
 
-#define apiHost                      @"http://127.0.0.1/"
+#define apiHost                      @"http://www.meixinger.com/"
 
 #endif /* Const_h */

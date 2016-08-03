@@ -41,6 +41,7 @@ NSInteger const kResponseErrorCode_NoError                 = 0;
     self.engine = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:apiHost]];
     self.engine.requestSerializer = [AFHTTPRequestSerializer serializer];
     self.engine.responseSerializer = [AFJSONResponseSerializer serializer];
+//    self.engine.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
 }
 
 - (void)postWithApiPath:(NSString *)apiPath

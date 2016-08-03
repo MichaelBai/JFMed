@@ -62,7 +62,7 @@
     if (!cell) {
         cell = [[NewsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    [cell setData];
+    [cell setDataWithNews:nil];
     return cell;
 }
 

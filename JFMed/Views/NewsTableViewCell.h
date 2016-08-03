@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class HomeNews;
+
 @interface NewsTableViewCell : UITableViewCell
 
 + (CGFloat)CellHeight;
-- (void)setData;
+- (void)setDataWithNews:(HomeNews *)news;
 
 @end

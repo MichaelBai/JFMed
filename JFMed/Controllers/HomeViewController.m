@@ -14,11 +14,18 @@
 #import "MessageListViewController.h"
 #import "PersonalViewController.h"
 #import "DoctorProfileViewController.h"
+#import "HomeModel.h"
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
-@property (nonatomic, strong) UIImageView *banner;
+//@property (nonatomic, strong) UIImageView *banner;
+
+@property (nonatomic, copy) NSString *newsTitle;
+@property (nonatomic, copy) NSString *docTitle;
+@property (nonatomic, strong) NSMutableArray *banners;
+@property (nonatomic, strong) NSMutableArray *newsArray;
+@property (nonatomic, strong) NSMutableArray *docArray;
 
 @end
 
@@ -31,8 +38,8 @@
 //    [kAppDelegate showLogin];
     self.title = @"脊诊室";
     
-    [self addLeftBarButtonWithTitle:@"通知" image:nil backgroundImage:nil action:@selector(gotoMessageVC)];
-    [self addRightBarButtonWithTitle:@"我的" image:nil backgroundImage:nil action:@selector(gotoPersonalVC)];
+    [self addLeftBarButtonWithTitle:nil image:[UIImage imageNamed:@"notif"] backgroundImage:nil action:@selector(gotoMessageVC)];
+    [self addRightBarButtonWithTitle:nil image:[UIImage imageNamed:@"person"] backgroundImage:nil action:@selector(gotoPersonalVC)];
     
 #warning test
     [self addRightBarButtonWithTitle:@"自查" image:nil backgroundImage:nil action:@selector(gotoCheck)];
@@ -48,15 +55,49 @@
     
     _scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:_scrollView];
-    [self setupScrollView];
+    
+    [NETWORK postWithApiPath:@"home/data" requestParams:nil handler:^(id response, NSError *error, BOOL updatePage) {
+        
+        self.newsTitle = response[@"news"][@"title"];
+        self.docTitle = response[@"doctor"][@"title"];
+        
+        self.banners = [NSMutableArray array];
+        self.newsArray = [NSMutableArray array];
+        self.docArray = [NSMutableArray array];
+        [response[@"banner"] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            HomeBanner *banner = [[HomeBanner alloc] initWithDictionary:obj error:nil];
+            [self.banners addObject:banner];
+        }];
+        
+        [response[@"news"][@"news_list"] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            HomeNews *news = [[HomeNews alloc] initWithDictionary:obj error:nil];
+            [self.newsArray addObject:news];
+        }];
+        
+        [response[@"doctor"][@"doctor_list"] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            HomeDoctor *doc = [[HomeDoctor alloc] initWithDictionary:obj error:nil];
+            [self.docArray addObject:doc];
+        }];
+        
+        [self setupScrollView];
+    }];
 }
 
 - (void)setupScrollView
 {
     CGFloat offsetY = 0;
-    _banner = [[UIImageView alloc] initWithFrame:CGRectMake(0, offsetY, SCREEN_WIDTH, 150)];
-    [_banner sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"banner"]];
-    [_scrollView addSubview:_banner];
+    
+    UIScrollView *bannerScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, offsetY, SCREEN_WIDTH, 150)];
+    bannerScroll.pagingEnabled = YES;
+    bannerScroll.contentSize = CGSizeMake(SCREEN_WIDTH*self.banners.count, 150);
+    [_scrollView addSubview:bannerScroll];
+    
+    for (int i = 0; i < self.banners.count; i++) {
+        UIImageView *banner = [[UIImageView alloc] initWithFrame:CGRectMake(i*SCREEN_WIDTH, 0, SCREEN_WIDTH, 150)];
+        HomeBanner *homeBanner = self.banners[i];
+        [banner sd_setImageWithURL:[NSURL URLWithString:homeBanner.img] placeholderImage:[UIImage imageNamed:@"banner"]];
+        [bannerScroll addSubview:banner];
+    }
     
     offsetY += 150;
     
@@ -64,11 +105,19 @@
     [_scrollView addSubview:moreNews];
     [moreNews addTapAction:@selector(gotoNewsVC) target:self];
     
-    UILabel *moreNewsLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, 40)];
-    moreNewsLabel.text = @"更多资讯";
+    UIImageView *newsIcon = [[UIImageView alloc] initWithFrame:CGRectMake(10, 12, 13, 16)];
+    newsIcon.image = [UIImage imageNamed:@"newsIcon"];
+    [moreNews addSubview:newsIcon];
+    
+    UILabel *moreNewsLabel = [[UILabel alloc] initWithFrame:CGRectMake(32, 0, 100, 40)];
+    moreNewsLabel.text = self.newsTitle;
     moreNewsLabel.textColor = COLOR_TITLE;
-    moreNewsLabel.font = FONT_(14);
+    moreNewsLabel.font = FONT_(16);
     [moreNews addSubview:moreNewsLabel];
+    
+    UIImageView *arrow = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 10 - 10, 12.5, 10, 15)];
+    arrow.image = [UIImage imageNamed:@"arrow"];
+    [moreNews addSubview:arrow];
     
     UIView *moreNewsLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 39.5, SCREEN_WIDTH, 0.5)];
     moreNewsLineView.backgroundColor = COLOR_LINE;
@@ -76,7 +125,7 @@
     
     offsetY += 40;
     
-    CGFloat tableViewHeight = [NewsTableViewCell CellHeight]*3;
+    CGFloat tableViewHeight = [NewsTableViewCell CellHeight]*self.newsArray.count;
     UITableView *newsTable = [[UITableView alloc] initWithFrame:CGRectMake(0, offsetY, SCREEN_WIDTH, tableViewHeight)];
     newsTable.delegate = self;
     newsTable.dataSource = self;
@@ -90,11 +139,19 @@
     [_scrollView addSubview:moreDoctors];
     [moreDoctors addTapAction:@selector(gotoDoctorsVC) target:self];
     
-    UILabel *moreDoctorsLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, 40)];
-    moreDoctorsLabel.text = @"更多医生";
+    UIImageView *docIcon = [[UIImageView alloc] initWithFrame:CGRectMake(10, 8, 17, 21)];
+    docIcon.image = [UIImage imageNamed:@"docIcon"];
+    [moreDoctors addSubview:docIcon];
+    
+    UILabel *moreDoctorsLabel = [[UILabel alloc] initWithFrame:CGRectMake(32, 0, 100, 40)];
+    moreDoctorsLabel.text = self.docTitle;
     moreDoctorsLabel.textColor = COLOR_TITLE;
-    moreDoctorsLabel.font = FONT_(14);
+    moreDoctorsLabel.font = FONT_(16);
     [moreDoctors addSubview:moreDoctorsLabel];
+    
+    UIImageView *arrow2 = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 10 - 10, 12.5, 10, 15)];
+    arrow2.image = [UIImage imageNamed:@"arrow"];
+    [moreDoctors addSubview:arrow2];
     
     UIView *moreDoctorsLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 39.5, SCREEN_WIDTH, 0.5)];
     moreDoctorsLineView.backgroundColor = COLOR_LINE;
@@ -107,21 +164,25 @@
     
     CGFloat leftOffset = 10;
     for (int i = 0; i < 3; i++) {
+        HomeDoctor *homeDoc = self.docArray[i];
         CGFloat singleDoctorViewWidth = (SCREEN_WIDTH-20)/3;
         UIView *singleDoctorView = [[UIView alloc] initWithFrame:CGRectMake(leftOffset, 0, singleDoctorViewWidth, 118)];
         [doctorsView addSubview:singleDoctorView];
         [singleDoctorView addTapAction:@selector(gotoDoctorProfileVC) target:self];
         UIImageView *doctorImage = [[UIImageView alloc] initWithFrame:CGRectMake((singleDoctorViewWidth-55)/2, 12, 55, 55)];
-        [doctorImage sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"docHead"]];
+        doctorImage.layer.cornerRadius = 55.0/2;
+        doctorImage.layer.masksToBounds = YES;
+        [doctorImage sd_setImageWithURL:[NSURL URLWithString:homeDoc.avatar] placeholderImage:[UIImage imageNamed:@"docHead"]];
+        doctorImage.contentMode = UIViewContentModeScaleAspectFill;
         [singleDoctorView addSubview:doctorImage];
         UILabel *doctorName = [[UILabel alloc] initWithFrame:CGRectMake(0, 75, singleDoctorViewWidth, 15)];
-        doctorName.text = @"赵一铭 主任医师";
+        doctorName.text = [NSString stringWithFormat:@"%@ %@", homeDoc.name, homeDoc.title];
         doctorName.textColor = HEXColor(0x222222);
         doctorName.font = FONT_(12);
         doctorName.textAlignment = NSTextAlignmentCenter;
         [singleDoctorView addSubview:doctorName];
         UILabel *hospitalName = [[UILabel alloc] initWithFrame:CGRectMake(0, 95, singleDoctorViewWidth, 13)];
-        hospitalName.text = @"北京协和医院";
+        hospitalName.text = homeDoc.hospital;
         hospitalName.textColor = HEXColor(0x999999);
         hospitalName.font = FONT_(12);
         hospitalName.textAlignment = NSTextAlignmentCenter;
@@ -181,7 +242,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
-    return 3;
+    return self.newsArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -190,7 +251,7 @@
     if (!cell) {
         cell = [[NewsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    [cell setData];
+    [cell setDataWithNews:self.newsArray[indexPath.row]];
     return cell;
 }
 

@@ -18,8 +18,9 @@
     
     if ([title length]) {
         left = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:action];
-    }else if (image){
-        left = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:action];
+    } else if (image) {
+        UIImage* originalImage = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        left = [[UIBarButtonItem alloc] initWithImage:originalImage style:UIBarButtonItemStylePlain target:self action:action];
     }
     if (background) {
         [left setBackgroundImage:background forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
@@ -36,7 +37,7 @@
     
     if ([title length]) {
         right = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:action];
-    }else if (image){
+    } else if (image) {
         UIImage* originalImage = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         right = [[UIBarButtonItem alloc] initWithImage:originalImage style:UIBarButtonItemStylePlain target:self action:action];
     }

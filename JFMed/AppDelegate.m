@@ -29,10 +29,10 @@
 {
 #if DEBUG
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        return [request.URL.host isEqualToString:@"127.0.0.1"];
+        return [request.URL.path isEqualToString:@"/home/data"];
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
         // Stub it with our "wsresponse.json" stub file
-        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFile(@"doctor_list.json",self.class)
+        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFile(@"home_data.json",self.class)
                                                 statusCode:200 headers:@{@"Content-Type":@"application/json"}];
     }];
 #endif
