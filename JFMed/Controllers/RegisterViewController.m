@@ -193,11 +193,15 @@ typedef NS_ENUM(NSInteger, RegisterProgress) {
 - (void)textFieldDidChange:(UITextField *)textField
 {
     self.curButton.enabled = YES;
-    self.curButton.backgroundColor = COLOR_THEME;
+    self.curButton.backgroundColor = nil;
+    [self.curButton setBackgroundImage:[CommonUtility stretchImageNamed:@"button_theme"] forState:UIControlStateNormal];
+    [self.curButton setBackgroundImage:[CommonUtility stretchImageNamed:@"button_theme"] forState:UIControlStateHighlighted];
     for (UITextField *textField in self.curTextFields) {
         if (textField.text.length == 0) {
             self.curButton.enabled = NO;
             self.curButton.backgroundColor = HEXColor(0xbfccd5);
+            [self.curButton setBackgroundImage:nil forState:UIControlStateNormal];
+            [self.curButton setBackgroundImage:nil forState:UIControlStateHighlighted];
             break;
         }
     }

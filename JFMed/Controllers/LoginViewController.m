@@ -45,6 +45,9 @@
     UIButton *forgotPwdBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:forgotPwdBtn];
     forgotPwdBtn.frame = CGRectMake(10, offsetY, 100, 20);
+    [forgotPwdBtn setImage:[UIImage imageNamed:@"login_help"] forState:UIControlStateNormal];
+    [forgotPwdBtn setImage:[UIImage imageNamed:@"login_help"] forState:UIControlStateHighlighted];
+    forgotPwdBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 8);
     [forgotPwdBtn setTitle:@"密码忘了？" forState:UIControlStateNormal];
     [forgotPwdBtn setTitleColor:HEXColor(0x98a0b4) forState:UIControlStateNormal];
     forgotPwdBtn.titleLabel.font = FONT_(15);
@@ -52,8 +55,8 @@
     
     UIButton *registerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:registerBtn];
-    registerBtn.frame = CGRectMake(SCREEN_WIDTH-120-10, offsetY, 120, 20);
-    [registerBtn setTitle:@"没有账户？去注册" forState:UIControlStateNormal];
+    registerBtn.frame = CGRectMake(SCREEN_WIDTH-150-10, offsetY, 150, 20);
+    [registerBtn setTitle:@"没有账户？去注册 ›" forState:UIControlStateNormal];
     [registerBtn setTitleColor:HEXColor(0x98a0b4) forState:UIControlStateNormal];
     registerBtn.titleLabel.font = FONT_(15);
     registerBtn.titleLabel.textAlignment = NSTextAlignmentRight;
@@ -80,11 +83,15 @@
 - (void)textFieldDidChange:(UITextField *)textField
 {
     self.curButton.enabled = YES;
-    self.curButton.backgroundColor = COLOR_THEME;
+    self.curButton.backgroundColor = nil;
+    [self.curButton setBackgroundImage:[CommonUtility stretchImageNamed:@"button_theme"] forState:UIControlStateNormal];
+    [self.curButton setBackgroundImage:[CommonUtility stretchImageNamed:@"button_theme"] forState:UIControlStateHighlighted];
     for (UITextField *textField in self.curTextFields) {
         if (textField.text.length == 0) {
             self.curButton.enabled = NO;
             self.curButton.backgroundColor = HEXColor(0xbfccd5);
+            [self.curButton setBackgroundImage:nil forState:UIControlStateNormal];
+            [self.curButton setBackgroundImage:nil forState:UIControlStateHighlighted];
             break;
         }
     }

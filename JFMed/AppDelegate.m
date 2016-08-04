@@ -22,6 +22,12 @@
 #if DEBUG
     [self debugHTTP];
 #endif
+    
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60) forBarMetrics:UIBarMetricsDefault];
+    UIImage* image = [UIImage imageNamed:@"back-icon"];
+    image = [image stretchableImageWithLeftCapWidth:image.size.width topCapHeight:0];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:image forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
     return YES;
 }
 
@@ -33,6 +39,13 @@
     } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
         // Stub it with our "wsresponse.json" stub file
         return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFile(@"home_data.json",self.class)
+                                                statusCode:200 headers:@{@"Content-Type":@"application/json"}];
+    }];
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.path isEqualToString:@"/news/list"];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        // Stub it with our "wsresponse.json" stub file
+        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFile(@"news_list.json",self.class)
                                                 statusCode:200 headers:@{@"Content-Type":@"application/json"}];
     }];
 #endif

@@ -28,6 +28,7 @@
     _tableView.backgroundColor = [UIColor whiteColor];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_tableView];
 }
 
@@ -76,16 +77,24 @@
         nameLabel.text = @"满天飞雪";
         [headerView addSubview:nameLabel];
         UILabel *birthLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 55, 180, 16)];
-        birthLabel.textColor = HEXColor(0x555c70);
+        birthLabel.textColor = HEXColor(0x535e6f);
         birthLabel.font = FONT_(15);
-        birthLabel.text = @"2012年10月12日";
+        birthLabel.text = @"2002年10月12日";
         [headerView addSubview:birthLabel];
         UIButton *modifyBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         modifyBtn.frame = CGRectMake(SCREEN_WIDTH - 40 - 10, 22.5, 40, 50);
         [modifyBtn setTitle:@"修改" forState:UIControlStateNormal];
-        [modifyBtn setTitleColor:HEXColor(0x555c70) forState:UIControlStateNormal];
+        modifyBtn.titleLabel.font = FONT_(13);
+        [modifyBtn setTitleColor:HEXColor(0x818895) forState:UIControlStateNormal];
+        [modifyBtn setImage:[UIImage imageNamed:@"personal_modify"] forState:UIControlStateNormal];
+        [modifyBtn setImage:[UIImage imageNamed:@"personal_modify"] forState:UIControlStateHighlighted];
+        modifyBtn.imageEdgeInsets = UIEdgeInsetsMake(-15, 0, 0, 0);
+        modifyBtn.titleEdgeInsets = UIEdgeInsetsMake(0, -32, -30, 0);
         [modifyBtn addTarget:self action:@selector(gotoPersonalEdit) forControlEvents:UIControlEventTouchUpInside];
         [headerView addSubview:modifyBtn];
+        UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 94.5, SCREEN_WIDTH, 0.5)];
+        [headerView addSubview:lineView];
+        lineView.backgroundColor = HEXColor(0xe5ecf2);
         return headerView;
     } else {
         UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 5)];
@@ -113,30 +122,30 @@
     }
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            cell.icon.image = [UIImage imageNamed:@""];
+            cell.icon.image = [UIImage imageNamed:@"personal_icon_1"];
             cell.titleLabel.text = @"自查记录";
         } else if (indexPath.row == 1) {
-            cell.icon.image = [UIImage imageNamed:@""];
+            cell.icon.image = [UIImage imageNamed:@"personal_icon_2"];
             cell.titleLabel.text = @"关注的医生";
         } else if (indexPath.row == 2) {
-            cell.icon.image = [UIImage imageNamed:@""];
+            cell.icon.image = [UIImage imageNamed:@"personal_icon_3"];
             cell.titleLabel.text = @"收藏的文章";
         }
     } else if (indexPath.section == 1) {
         if (indexPath.row == 0) {
-            cell.icon.image = [UIImage imageNamed:@""];
+            cell.icon.image = [UIImage imageNamed:@"personal_icon_4"];
             cell.titleLabel.text = @"通知推送";
         } else if (indexPath.row == 1) {
-            cell.icon.image = [UIImage imageNamed:@""];
+            cell.icon.image = [UIImage imageNamed:@"personal_icon_5"];
             cell.titleLabel.text = @"清理缓存";
         } else if (indexPath.row == 2) {
-            cell.icon.image = [UIImage imageNamed:@""];
+            cell.icon.image = [UIImage imageNamed:@"personal_icon_6"];
             cell.titleLabel.text = @"检查新版本";
         } else if (indexPath.row == 3) {
-            cell.icon.image = [UIImage imageNamed:@""];
+            cell.icon.image = [UIImage imageNamed:@"personal_icon_7"];
             cell.titleLabel.text = @"意见反馈";
         } else if (indexPath.row == 4) {
-            cell.icon.image = [UIImage imageNamed:@""];
+            cell.icon.image = [UIImage imageNamed:@"personal_icon_8"];
             cell.titleLabel.text = @"关于";
         }
     }

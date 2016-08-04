@@ -48,4 +48,16 @@
     self.navigationItem.rightBarButtonItem = right;
 }
 
+- (void)setTitle:(NSString *)title
+{
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.textColor = COLOR_NAV;
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.font = FONT_(20);
+    titleLabel.text = title;
+    [titleLabel sizeToFit];
+    self.navigationItem.titleView = titleLabel;
+}
+
 @end

@@ -20,7 +20,7 @@
     if (self) {
         _icon = [UIImageView new];
         [self.contentView addSubview:_icon];
-        _icon.backgroundColor = HEXColor(0xeaeaea);
+//        _icon.backgroundColor = HEXColor(0xeaeaea);
         
         _titleLabel = [UILabel new];
         [self.contentView addSubview:_titleLabel];
@@ -29,7 +29,11 @@
         
         UIImageView *arrowView = [UIImageView new];
         [self.contentView addSubview:arrowView];
-        arrowView.image = [UIImage imageNamed:@""];
+        arrowView.image = [UIImage imageNamed:@"arrow"];
+        
+        UIView *lineView = [UIView new];
+        [self.contentView addSubview:lineView];
+        lineView.backgroundColor = HEXColor(0xe5ecf2);
         
         [_icon mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(@10);
@@ -44,6 +48,10 @@
         [arrowView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(@-20);
             make.centerY.equalTo(@0);
+        }];
+        [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo(@0.5);
+            make.left.bottom.right.equalTo(@0);
         }];
     }
     return self;

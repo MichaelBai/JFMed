@@ -45,7 +45,7 @@
     [self addRightBarButtonWithTitle:nil image:[UIImage imageNamed:@"person"] backgroundImage:nil action:@selector(gotoPersonalVC)];
     
 #warning test
-    [self addRightBarButtonWithTitle:@"自查" image:nil backgroundImage:nil action:@selector(gotoCheck)];
+//    [self addRightBarButtonWithTitle:@"自查" image:nil backgroundImage:nil action:@selector(gotoCheck)];
 //    UIButton *checkBtn = [UIButton new];
 //    [checkBtn setTitle:@"脊柱自查" forState:UIControlStateNormal];
 //    [checkBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -207,7 +207,7 @@
 
 - (void)gotoPersonalVC
 {
-//    [kAppDelegate showLogin];
+    [kAppDelegate showLogin];
     PersonalViewController *personalVC = [[PersonalViewController alloc] init];
     [self.navigationController pushViewController:personalVC animated:YES];
 }

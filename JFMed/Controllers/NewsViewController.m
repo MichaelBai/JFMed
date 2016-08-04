@@ -9,11 +9,14 @@
 #import "NewsViewController.h"
 #import "MBTabView.h"
 #import "NewsTableViewCell.h"
+#import "HomeModel.h"
 
 @interface NewsViewController () <UITableViewDelegate, UITableViewDataSource, MBTabViewButtonClickDelegate>
 
 @property (nonatomic, strong) MBTabView *tabView;
 @property (nonatomic, strong) NSMutableArray *tableViews;
+
+@property (nonatomic, strong) NSMutableArray *newsArray;
 
 @end
 
@@ -42,6 +45,20 @@
         [_tableViews addObject:tableView];
     }
     [self.view bringSubviewToFront:_tableViews.firstObject];
+    
+    [NETWORK postWithApiPath:@"news/list" requestParams:nil handler:^(id response, NSError *error, BOOL updatePage) {
+        if (error) {
+            
+        } else {
+            self.newsArray = [NSMutableArray array];
+            
+            [response[@"news_list"] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                HomeNews *news = [[HomeNews alloc] initWithDictionary:obj error:nil];
+                [self.newsArray addObject:news];
+            }];
+            [_tableViews makeObjectsPerformSelector:@selector(reloadData)];
+        }
+    }];
 }
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource
@@ -53,7 +70,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
-    return 10;
+    return self.newsArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -62,7 +79,7 @@
     if (!cell) {
         cell = [[NewsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    [cell setDataWithNews:nil];
+    [cell setDataWithNews:self.newsArray[indexPath.row]];
     return cell;
 }
 
