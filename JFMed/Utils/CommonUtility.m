@@ -27,4 +27,12 @@
     return attributedString;
 }
 
++ (UIImage *)stretchImageNamed:(NSString *)imageName
+{
+    UIImage *originalImage = [UIImage imageNamed:imageName];
+    UIEdgeInsets insets = UIEdgeInsetsMake(0, 25, 0, 25);
+    UIImage *stretchableImage = [originalImage resizableImageWithCapInsets:insets];
+    return stretchableImage;
+}
+
 @end

@@ -12,6 +12,7 @@ pod 'libextobjc',                       '~> 0.4'
 pod 'LLSimpleCamera',                   '~> 4.1'
 pod 'Masonry'
 pod 'OHHTTPStubs'
+pod 'FrameAccessor'
 
 end
 

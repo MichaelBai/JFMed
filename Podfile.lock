@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - FrameAccessor (2.0)
   - libextobjc (0.4.1):
     - libextobjc/EXTADT (= 0.4.1)
     - libextobjc/EXTConcreteProtocol (= 0.4.1)
@@ -79,6 +80,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.4)
+  - FrameAccessor
   - libextobjc (~> 0.4)
   - LLSimpleCamera (~> 4.1)
   - Mantle (~> 2.0)
@@ -88,6 +90,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  FrameAccessor: 443a13e58e23a10ff22180da0897b28c3f6abf66
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   LLSimpleCamera: ed7813ce4827ff3e34c6af159c99b5b56e54d1c6
   Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9

@@ -24,4 +24,6 @@
                                                         font:(UIFont *)font
                                                    alignment:(NSTextAlignment)alignment;
 
++ (UIImage *)stretchImageNamed:(NSString *)imageName;
+
 @end

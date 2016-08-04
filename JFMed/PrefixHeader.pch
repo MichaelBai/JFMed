@@ -27,6 +27,7 @@
 #import "Mantle.h"
 #import "SVPullToRefresh.h"
 #import "extobjc.h"
+#import "FrameAccessor.h"
 #import "NetworkCenter.h"
 
 #if DEBUG

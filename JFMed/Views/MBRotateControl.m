@@ -31,13 +31,15 @@ const CGFloat kInvalidDeltaAngle = 1024;
         
         self.container = [[UIImageView alloc] initWithFrame:self.bounds];
         [self addSubview:self.container];
-        self.yellowLine = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 3)];
-        self.yellowLine.backgroundColor = [UIColor yellowColor];
+        self.yellowLine = [[UIImageView alloc] initWithFrame:CGRectMake(35, 0, SCREEN_WIDTH-70, 20)];
+//        self.yellowLine.backgroundColor = [UIColor yellowColor];
+        self.yellowLine.image = [UIImage imageNamed:@"self_check_bar"];
+        self.yellowLine.contentMode = UIViewContentModeScaleAspectFit;
         self.yellowLine.center = self.container.center;
         [self.container addSubview:self.yellowLine];
-        self.knob = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-        self.knob.backgroundColor = [UIColor darkGrayColor];
-        self.knob.center = CGPointMake(self.container.center.x + self.yellowLine.frame.size.width/2, self.container.center.y);
+        self.knob = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+//        self.knob.backgroundColor = [UIColor darkGrayColor];
+        self.knob.center = CGPointMake(self.container.center.x + self.yellowLine.frame.size.width/2 - 20, self.container.center.y);
         self.knobRect = CGRectMake(self.knob.center.x-10, self.knob.center.y-10, 20, 20);
         [self.container addSubview:self.knob];
     }

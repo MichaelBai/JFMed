@@ -27,7 +27,7 @@ static const CGFloat kControlHeight = 122.5;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = HEXColor(0xe5e5e5);
     
     [self setupOverlay];
     
@@ -69,7 +69,7 @@ static const CGFloat kControlHeight = 122.5;
 {
     _overlayView = [[UIView alloc] initWithFrame:self.view.bounds];
     
-    UIView *dashLineView = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2-2, NAV_HEIGHT + 15, 4, SCREEN_HEIGHT - NAV_HEIGHT - kControlHeight - 30)];
+    UIView *dashLineView = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2-1.5, NAV_HEIGHT + 15, 3, SCREEN_HEIGHT - NAV_HEIGHT - kControlHeight - 30)];
     [_overlayView addSubview:dashLineView];
     [self drawDashLine:dashLineView lineLength:10 lineSpacing:2 lineColor:COLOR_THEME];
     

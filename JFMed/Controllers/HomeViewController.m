@@ -7,7 +7,6 @@
 //
 
 #import "HomeViewController.h"
-#import "SelfCheckViewController.h"
 #import "NewsTableViewCell.h"
 #import "NewsViewController.h"
 #import "DoctorsViewController.h"
@@ -15,6 +14,10 @@
 #import "PersonalViewController.h"
 #import "DoctorProfileViewController.h"
 #import "HomeModel.h"
+
+#warning test
+#import "SelfCheckViewController.h"
+#import "SelfCheckIntroViewController.h"
 
 @interface HomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -223,7 +226,7 @@
 
 - (void)gotoCheck
 {
-    SelfCheckViewController *selfCheckVC = [[SelfCheckViewController alloc] init];
+    SelfCheckIntroViewController *selfCheckVC = [[SelfCheckIntroViewController alloc] init];
     [self.navigationController pushViewController:selfCheckVC animated:YES];
 }
 
