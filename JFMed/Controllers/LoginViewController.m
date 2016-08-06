@@ -25,13 +25,19 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.title = @"登录";
+    self.title = @"登录账号";
     
     CGFloat offsetY = NAV_HEIGHT + 25;
     UITextField *phoneField = [self customTextFieldWithOffsetY:offsetY];
+    phoneField.placeholder = @"请输入手机号";
+    phoneField.keyboardType = UIKeyboardTypeNumberPad;
+    [phoneField becomeFirstResponder];
     [self.view addSubview:phoneField];
     offsetY += 44 + 25;
     UITextField *pwdField = [self customTextFieldWithOffsetY:offsetY];
+    pwdField.placeholder = @"请输入密码";
+    pwdField.keyboardType = UIKeyboardTypeAlphabet;
+    pwdField.secureTextEntry = YES;
     [self.view addSubview:pwdField];
     offsetY += 44 + 25;
     UIButton *nextBtn = [self customButtonWithOffsetY:offsetY];
@@ -41,10 +47,10 @@
     self.curButton = nextBtn;
     self.curTextFields = @[phoneField, pwdField];
     
-    offsetY += 44 + 26;
+    offsetY += 44 + 16;
     UIButton *forgotPwdBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:forgotPwdBtn];
-    forgotPwdBtn.frame = CGRectMake(10, offsetY, 100, 20);
+    forgotPwdBtn.frame = CGRectMake(10, offsetY, 100, 40);
     [forgotPwdBtn setImage:[UIImage imageNamed:@"login_help"] forState:UIControlStateNormal];
     [forgotPwdBtn setImage:[UIImage imageNamed:@"login_help"] forState:UIControlStateHighlighted];
     forgotPwdBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 8);
@@ -55,7 +61,7 @@
     
     UIButton *registerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:registerBtn];
-    registerBtn.frame = CGRectMake(SCREEN_WIDTH-150-10, offsetY, 150, 20);
+    registerBtn.frame = CGRectMake(SCREEN_WIDTH-150-10, offsetY, 150, 40);
     [registerBtn setTitle:@"没有账户？去注册 ›" forState:UIControlStateNormal];
     [registerBtn setTitleColor:HEXColor(0x98a0b4) forState:UIControlStateNormal];
     registerBtn.titleLabel.font = FONT_(15);
@@ -77,7 +83,8 @@
 
 - (void)loginClick:(UIButton *)sender
 {
-    NSLog(@"Login!");
+    kAppDelegate.accessToken = @"token";
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)textFieldDidChange:(UITextField *)textField

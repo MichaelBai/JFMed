@@ -18,7 +18,7 @@
 #define RGBACOLOR(r,g,b,a)              [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
 
 #define COLOR_THEME           HEXColor(0x2dd2cc)
-#define COLOR_LINE            HEXColor(0xeaeaea)
+#define COLOR_LINE            HEXColor(0xe6eaf3)
 #define COLOR_TITLE           HEXColor(0x222222)
 #define COLOR_NOTICE          HEXColor(0x999999)
 #define COLOR_NAV             HEXColor(0x555d71)

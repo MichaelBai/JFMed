@@ -10,11 +10,13 @@
 #import "MBRotateControl.h"
 #import "LLSimpleCamera.h"
 #import "DoctorsViewController.h"
+#import "SelfCheckResultViewController.h"
 
 static const CGFloat kControlHeight = 122.5;
 
 @interface SelfCheckViewController () <MBRotateDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
+@property (nonatomic, assign) CGFloat angle;
 @property (nonatomic, strong) UILabel *angleLabel;
 @property (nonatomic, strong) UIView *overlayView;
 @property (nonatomic, strong) LLSimpleCamera *camera;
@@ -129,7 +131,8 @@ static const CGFloat kControlHeight = 122.5;
     [self.camera capture:^(LLSimpleCamera *camera, UIImage *image, NSDictionary *metadata, NSError *error) {
         [self.camera stop];
         if(!error) {
-            [self.navigationController popViewControllerAnimated:YES];
+            SelfCheckResultViewController *resultVC = [[SelfCheckResultViewController alloc] initWithAngle:self.angle];
+            [self.navigationController pushViewController:resultVC animated:YES];
         }
         else {
             NSLog(@"An error has occured: %@", error);
@@ -139,8 +142,12 @@ static const CGFloat kControlHeight = 122.5;
 
 - (void)closeCamera
 {
-    [self.camera stop];
-    [self.navigationController popViewControllerAnimated:YES];
+#warning test
+    SelfCheckResultViewController *resultVC = [[SelfCheckResultViewController alloc] initWithAngle:18];
+    [self.navigationController pushViewController:resultVC animated:YES];
+    
+//    [self.camera stop];
+//    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - UIImagePickerControllerDelegate
@@ -204,6 +211,7 @@ static const CGFloat kControlHeight = 122.5;
 
 - (void)angleDidChangeTo:(CGFloat)angle
 {
+    self.angle = angle;
     self.angleLabel.text = [NSString stringWithFormat:@"当前角度：%.0f度", fabs(angle)];
 }
 

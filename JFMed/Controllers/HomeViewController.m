@@ -207,7 +207,10 @@
 
 - (void)gotoPersonalVC
 {
-    [kAppDelegate showLogin];
+    if (!kAppDelegate.accessToken) {
+        [kAppDelegate showLogin];
+        return;
+    }
     PersonalViewController *personalVC = [[PersonalViewController alloc] init];
     [self.navigationController pushViewController:personalVC animated:YES];
 }

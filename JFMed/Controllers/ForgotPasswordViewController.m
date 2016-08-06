@@ -24,6 +24,9 @@ typedef NS_ENUM(NSInteger, ForgotPasswordProgress) {
 @property (nonatomic, strong) UIButton *manBtn;
 @property (nonatomic, strong) UIButton *womanBtn;
 
+@property (nonatomic, assign) NSInteger timerCount;
+@property (nonatomic, strong) UIButton *resendBtn;
+
 @end
 
 @implementation ForgotPasswordViewController
@@ -58,7 +61,8 @@ typedef NS_ENUM(NSInteger, ForgotPasswordProgress) {
 
 - (void)passwordClick:(UIButton *)sender
 {
-    
+    kAppDelegate.accessToken = @"token";
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)changeState:(ForgotPasswordProgress)state
@@ -69,6 +73,9 @@ typedef NS_ENUM(NSInteger, ForgotPasswordProgress) {
         case ForgotPasswordProgressPhoneNumber:
         {
             UITextField *phoneNumberField = [self customTextFieldWithOffsetY:0];
+            phoneNumberField.placeholder = @"请输入手机号";
+            phoneNumberField.keyboardType = UIKeyboardTypeNumberPad;
+            [phoneNumberField becomeFirstResponder];
             [self.actionView addSubview:phoneNumberField];
             UIButton *nextBtn = [self customButtonWithOffsetY:44 + 25];
             [self.actionView addSubview:nextBtn];
@@ -81,7 +88,31 @@ typedef NS_ENUM(NSInteger, ForgotPasswordProgress) {
         case ForgotPasswordProgressPhoneVerify:
         {
             UITextField *phoneVerifyField = [self customTextFieldWithOffsetY:0];
+            phoneVerifyField.placeholder = @"请输入验证码";
+            phoneVerifyField.width = SCREEN_WIDTH - 125 - 35;
             [self.actionView addSubview:phoneVerifyField];
+            phoneVerifyField.keyboardType = UIKeyboardTypeNumberPad;
+            [phoneVerifyField becomeFirstResponder];
+            
+            self.resendBtn = [self customButtonWithOffsetY:0];
+            self.resendBtn.left = phoneVerifyField.right + 15;
+            self.resendBtn.width = 125;
+            [self.resendBtn addTarget:self action:@selector(resend:) forControlEvents:UIControlEventTouchUpInside];
+            [self.actionView addSubview:self.resendBtn];
+            
+            self.timerCount = 60;
+            self.resendBtn.enabled = NO;
+            [self.resendBtn setTitle:@(self.timerCount).stringValue forState:UIControlStateNormal];
+            [self.resendBtn setTitleColor:COLOR_NAV forState:UIControlStateNormal];
+            self.resendBtn.backgroundColor = HEXColor(0xebeef5);
+            self.resendBtn.layer.borderColor = HEXColor(0xdee3e9).CGColor;
+            self.resendBtn.layer.borderWidth = 0.5;
+            [NSTimer scheduledTimerWithTimeInterval:1
+                                             target:self
+                                           selector:@selector(fireTimer:)
+                                           userInfo:nil
+                                            repeats:YES];
+            
             UIButton *nextBtn = [self customButtonWithOffsetY:44 + 25];
             [self.actionView addSubview:nextBtn];
             [nextBtn setTitle:@"下一步" forState:UIControlStateNormal];
@@ -93,8 +124,15 @@ typedef NS_ENUM(NSInteger, ForgotPasswordProgress) {
         case ForgotPasswordProgressNewPassword:
         {
             UITextField *pwdField = [self customTextFieldWithOffsetY:0];
+            pwdField.placeholder = @"设置密码，至少6位数";
+            pwdField.keyboardType = UIKeyboardTypeAlphabet;
+            pwdField.secureTextEntry = YES;
+            [pwdField becomeFirstResponder];
             [self.actionView addSubview:pwdField];
             UITextField *pwdAgainField = [self customTextFieldWithOffsetY:44 + 25];
+            pwdAgainField.placeholder = @"再次输入密码，以便确认正确";
+            pwdAgainField.keyboardType = UIKeyboardTypeAlphabet;
+            pwdAgainField.secureTextEntry = YES;
             [self.actionView addSubview:pwdAgainField];
             UIButton *nextBtn = [self customButtonWithOffsetY:(44 + 25) * 2];
             [self.actionView addSubview:nextBtn];
@@ -173,6 +211,33 @@ typedef NS_ENUM(NSInteger, ForgotPasswordProgress) {
     submitBtn.enabled = NO;
     
     return submitBtn;
+}
+
+#pragma mark - timer
+
+- (void)fireTimer:(NSTimer *)timer
+{
+    self.timerCount--;
+    if (self.timerCount < 0) {
+        [timer invalidate];
+        timer = nil;
+        
+        self.resendBtn.enabled = YES;
+        [self.resendBtn setTitle:@"重新发送" forState:UIControlStateNormal];
+        [self.resendBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        self.resendBtn.layer.borderWidth = 0;
+        self.resendBtn.backgroundColor = nil;
+        [self.resendBtn setBackgroundImage:[CommonUtility stretchImageNamed:@"button_theme"] forState:UIControlStateNormal];
+        [self.resendBtn setBackgroundImage:[CommonUtility stretchImageNamed:@"button_theme"] forState:UIControlStateHighlighted];
+    } else {
+        self.resendBtn.enabled = NO;
+        [self.resendBtn setTitle:@(self.timerCount).stringValue forState:UIControlStateNormal];
+        [self.resendBtn setTitleColor:COLOR_NAV forState:UIControlStateNormal];
+        self.resendBtn.backgroundColor = HEXColor(0xebeef5);
+        self.resendBtn.layer.borderColor = HEXColor(0xdee3e9).CGColor;
+        self.resendBtn.layer.borderWidth = 0.5;
+        
+    }
 }
 
 @end

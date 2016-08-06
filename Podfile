@@ -13,6 +13,7 @@ pod 'LLSimpleCamera',                   '~> 4.1'
 pod 'Masonry'
 pod 'OHHTTPStubs'
 pod 'FrameAccessor'
+pod 'TTTAttributedLabel'
 
 end
 

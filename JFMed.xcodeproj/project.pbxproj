@@ -29,13 +29,14 @@
 		4C2A15721D4F6FFD00654D8A /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A156F1D4F6FFD00654D8A /* UIScrollView+SVInfiniteScrolling.m */; };
 		4C2A15731D4F6FFD00654D8A /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A15711D4F6FFD00654D8A /* UIScrollView+SVPullToRefresh.m */; };
 		4C2A15761D4FA35800654D8A /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A15751D4FA35800654D8A /* HomeModel.m */; };
-		4C2A15791D523B0C00654D8A /* SelfCheckIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A15781D523B0C00654D8A /* SelfCheckIntroViewController.m */; };
+		4C6E93A11D541D03005706E5 /* SelfCheckIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E939E1D541D03005706E5 /* SelfCheckIntroViewController.m */; };
+		4C6E93A21D541D03005706E5 /* SelfCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E93A01D541D03005706E5 /* SelfCheckViewController.m */; };
+		4C6E93A51D541D12005706E5 /* SelfCheckResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E93A41D541D12005706E5 /* SelfCheckResultViewController.m */; };
 		4C7A8D411D4B8C5D00920CF4 /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7A8D401D4B8C5D00920CF4 /* ForgotPasswordViewController.m */; };
 		4CBB1D8F1D3EFF8900357B9E /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1D8E1D3EFF8900357B9E /* WelcomeViewController.m */; };
 		4CBB1D941D3F039700357B9E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1D931D3F039700357B9E /* HomeViewController.m */; };
 		4CBB1D9E1D3FB4EE00357B9E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1D9D1D3FB4EE00357B9E /* LoginViewController.m */; };
 		4CBB1DA11D3FB4F800357B9E /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DA01D3FB4F800357B9E /* RegisterViewController.m */; };
-		4CBB1DA41D426D5000357B9E /* SelfCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DA31D426D5000357B9E /* SelfCheckViewController.m */; };
 		4CBB1DA81D426E0D00357B9E /* MBRotateControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DA71D426E0D00357B9E /* MBRotateControl.m */; };
 		4CBB1DAB1D44B89000357B9E /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DAA1D44B89000357B9E /* NewsTableViewCell.m */; };
 		4CBB1DAF1D44EC9B00357B9E /* UIViewController+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB1DAE1D44EC9B00357B9E /* UIViewController+Utils.m */; };
@@ -102,8 +103,12 @@
 		4C2A15711D4F6FFD00654D8A /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		4C2A15741D4FA35800654D8A /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
 		4C2A15751D4FA35800654D8A /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
-		4C2A15771D523B0C00654D8A /* SelfCheckIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelfCheckIntroViewController.h; path = JFMed/Controllers/SelfCheckIntroViewController.h; sourceTree = SOURCE_ROOT; };
-		4C2A15781D523B0C00654D8A /* SelfCheckIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelfCheckIntroViewController.m; path = JFMed/Controllers/SelfCheckIntroViewController.m; sourceTree = SOURCE_ROOT; };
+		4C6E939D1D541D03005706E5 /* SelfCheckIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfCheckIntroViewController.h; sourceTree = "<group>"; };
+		4C6E939E1D541D03005706E5 /* SelfCheckIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfCheckIntroViewController.m; sourceTree = "<group>"; };
+		4C6E939F1D541D03005706E5 /* SelfCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfCheckViewController.h; sourceTree = "<group>"; };
+		4C6E93A01D541D03005706E5 /* SelfCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfCheckViewController.m; sourceTree = "<group>"; };
+		4C6E93A31D541D12005706E5 /* SelfCheckResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfCheckResultViewController.h; sourceTree = "<group>"; };
+		4C6E93A41D541D12005706E5 /* SelfCheckResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfCheckResultViewController.m; sourceTree = "<group>"; };
 		4C7A8D3F1D4B8C5D00920CF4 /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForgotPasswordViewController.h; path = JFMed/Controllers/ForgotPasswordViewController.h; sourceTree = SOURCE_ROOT; };
 		4C7A8D401D4B8C5D00920CF4 /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForgotPasswordViewController.m; path = JFMed/Controllers/ForgotPasswordViewController.m; sourceTree = SOURCE_ROOT; };
 		4CBB1D8D1D3EFF8900357B9E /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
@@ -116,8 +121,6 @@
 		4CBB1D9D1D3FB4EE00357B9E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = JFMed/Controllers/LoginViewController.m; sourceTree = SOURCE_ROOT; };
 		4CBB1D9F1D3FB4F800357B9E /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = JFMed/Controllers/RegisterViewController.h; sourceTree = SOURCE_ROOT; };
 		4CBB1DA01D3FB4F800357B9E /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = JFMed/Controllers/RegisterViewController.m; sourceTree = SOURCE_ROOT; };
-		4CBB1DA21D426D5000357B9E /* SelfCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelfCheckViewController.h; path = JFMed/Controllers/SelfCheckViewController.h; sourceTree = SOURCE_ROOT; };
-		4CBB1DA31D426D5000357B9E /* SelfCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelfCheckViewController.m; path = JFMed/Controllers/SelfCheckViewController.m; sourceTree = SOURCE_ROOT; };
 		4CBB1DA61D426E0D00357B9E /* MBRotateControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBRotateControl.h; sourceTree = "<group>"; };
 		4CBB1DA71D426E0D00357B9E /* MBRotateControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBRotateControl.m; sourceTree = "<group>"; };
 		4CBB1DA91D44B89000357B9E /* NewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
@@ -302,9 +305,24 @@
 			path = SVPullToRefresh;
 			sourceTree = "<group>";
 		};
+		4C6E939C1D541D03005706E5 /* SelfCheck */ = {
+			isa = PBXGroup;
+			children = (
+				4C6E939D1D541D03005706E5 /* SelfCheckIntroViewController.h */,
+				4C6E939E1D541D03005706E5 /* SelfCheckIntroViewController.m */,
+				4C6E939F1D541D03005706E5 /* SelfCheckViewController.h */,
+				4C6E93A01D541D03005706E5 /* SelfCheckViewController.m */,
+				4C6E93A31D541D12005706E5 /* SelfCheckResultViewController.h */,
+				4C6E93A41D541D12005706E5 /* SelfCheckResultViewController.m */,
+			);
+			name = SelfCheck;
+			path = JFMed/Controllers/SelfCheck;
+			sourceTree = SOURCE_ROOT;
+		};
 		4CBB1D8C1D3EFE7600357B9E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4C6E939C1D541D03005706E5 /* SelfCheck */,
 				4CD9A16C1D4C3C84000C613C /* Personal */,
 				4CBB1D8D1D3EFF8900357B9E /* WelcomeViewController.h */,
 				4CBB1D8E1D3EFF8900357B9E /* WelcomeViewController.m */,
@@ -316,10 +334,6 @@
 				4CBB1DA01D3FB4F800357B9E /* RegisterViewController.m */,
 				4C7A8D3F1D4B8C5D00920CF4 /* ForgotPasswordViewController.h */,
 				4C7A8D401D4B8C5D00920CF4 /* ForgotPasswordViewController.m */,
-				4C2A15771D523B0C00654D8A /* SelfCheckIntroViewController.h */,
-				4C2A15781D523B0C00654D8A /* SelfCheckIntroViewController.m */,
-				4CBB1DA21D426D5000357B9E /* SelfCheckViewController.h */,
-				4CBB1DA31D426D5000357B9E /* SelfCheckViewController.m */,
 				4CBB1DB01D44FDB800357B9E /* NewsViewController.h */,
 				4CBB1DB11D44FDB800357B9E /* NewsViewController.m */,
 				4CBB1DB31D44FDCD00357B9E /* DoctorsViewController.h */,
@@ -558,14 +572,15 @@
 				4CBB1DB81D44FEB300357B9E /* UIView+Utils.m in Sources */,
 				4C1CED7C1D3D3217003D599A /* AppDelegate.m in Sources */,
 				4CBB1DA11D3FB4F800357B9E /* RegisterViewController.m in Sources */,
-				4CBB1DA41D426D5000357B9E /* SelfCheckViewController.m in Sources */,
 				4C2A15731D4F6FFD00654D8A /* UIScrollView+SVPullToRefresh.m in Sources */,
+				4C6E93A21D541D03005706E5 /* SelfCheckViewController.m in Sources */,
 				4C2A15531D4CF7A000654D8A /* DoctorWorkTimeViewController.m in Sources */,
 				4C2A15501D4CF75C00654D8A /* DoctorInfoViewController.m in Sources */,
 				4C2A154D1D4CC16700654D8A /* DoctorProfileViewController.m in Sources */,
 				4CBB1DB51D44FDCD00357B9E /* DoctorsViewController.m in Sources */,
 				4CBB1DA81D426E0D00357B9E /* MBRotateControl.m in Sources */,
 				4C1CED791D3D3217003D599A /* main.m in Sources */,
+				4C6E93A11D541D03005706E5 /* SelfCheckIntroViewController.m in Sources */,
 				4CBB1DB21D44FDB800357B9E /* NewsViewController.m in Sources */,
 				4CBB1DAB1D44B89000357B9E /* NewsTableViewCell.m in Sources */,
 				4CBB1D8F1D3EFF8900357B9E /* WelcomeViewController.m in Sources */,
@@ -576,11 +591,11 @@
 				4CBB1DCD1D46E5FC00357B9E /* CommonUtility.m in Sources */,
 				4C2A156A1D4DB89200654D8A /* Doctor.m in Sources */,
 				4CBB1DC71D46503A00357B9E /* MessageTableViewCell.m in Sources */,
-				4C2A15791D523B0C00654D8A /* SelfCheckIntroViewController.m in Sources */,
 				4CBB1D941D3F039700357B9E /* HomeViewController.m in Sources */,
 				4CBB1DBB1D45056A00357B9E /* MBTabView.m in Sources */,
 				4CBB1DAF1D44EC9B00357B9E /* UIViewController+Utils.m in Sources */,
 				4CBB1DBE1D4506ED00357B9E /* NSString+Utility.m in Sources */,
+				4C6E93A51D541D12005706E5 /* SelfCheckResultViewController.m in Sources */,
 				4CBB1DC11D459C2C00357B9E /* DoctorTableViewCell.m in Sources */,
 				4C7A8D411D4B8C5D00920CF4 /* ForgotPasswordViewController.m in Sources */,
 				4C2A15671D4D9D0C00654D8A /* NetworkCenter.m in Sources */,

@@ -41,6 +41,9 @@
     UIImageView *docHead = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH-65)/2, 15, 65, 65)];
     [docHead sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"docHead"]];
     [headerView addSubview:docHead];
+    docHead.contentMode = UIViewContentModeScaleAspectFill;
+    docHead.layer.cornerRadius = 65.0/2;
+    docHead.layer.masksToBounds = YES;
     
     UILabel *hospitalLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 94, SCREEN_WIDTH - 20, 16)];
     hospitalLabel.text = @"北京协和医院";
@@ -110,6 +113,8 @@
     doctorInfoBtn.frame = CGRectMake(0, 208, SCREEN_WIDTH/2, 44);
     [doctorInfoBtn setTitle:@"医生介绍" forState:UIControlStateNormal];
     [doctorInfoBtn setTitleColor:COLOR_THEME forState:UIControlStateNormal];
+    [doctorInfoBtn setImage:[UIImage imageNamed:@"doc_detail_icon"] forState:UIControlStateNormal];
+    doctorInfoBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
     doctorInfoBtn.titleLabel.font = FONT_(15);
     [doctorInfoBtn addTarget:self action:@selector(gotoDocInfoVC) forControlEvents:UIControlEventTouchUpInside];
     [headerView addSubview:doctorInfoBtn];
@@ -122,6 +127,8 @@
     docWorkTimeBtn.frame = CGRectMake(SCREEN_WIDTH/2, 208, SCREEN_WIDTH/2, 44);
     [docWorkTimeBtn setTitle:@"出诊时间" forState:UIControlStateNormal];
     [docWorkTimeBtn setTitleColor:COLOR_THEME forState:UIControlStateNormal];
+    [docWorkTimeBtn setImage:[UIImage imageNamed:@"doc_detail_time"] forState:UIControlStateNormal];
+    docWorkTimeBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
     docWorkTimeBtn.titleLabel.font = FONT_(15);
     [docWorkTimeBtn addTarget:self action:@selector(gotoDocWorkTimeVC) forControlEvents:UIControlEventTouchUpInside];
     [headerView addSubview:docWorkTimeBtn];
@@ -131,7 +138,11 @@
     UIView *moreNews = [[UIView alloc] initWithFrame:CGRectMake(0, offsetY, SCREEN_WIDTH, 41)];
     [_scrollView addSubview:moreNews];
     
-    UILabel *moreNewsLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, 41)];
+    UIImageView *articleIcon = [[UIImageView alloc] initWithFrame:CGRectMake(10, 12.5, 13, 16)];
+    articleIcon.image = [UIImage imageNamed:@"doc_detail_article"];
+    [moreNews addSubview:articleIcon];
+    
+    UILabel *moreNewsLabel = [[UILabel alloc] initWithFrame:CGRectMake(32, 0, 100, 41)];
     moreNewsLabel.text = @"相关文章";
     moreNewsLabel.textColor = COLOR_NAV;
     moreNewsLabel.font = FONT_(16);
@@ -154,7 +165,9 @@
         UILabel *articleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, SCREEN_WIDTH-20, 68)];
         [article addSubview:articleLabel];
         
-        articleLabel.text = @"脊柱侧弯是怎么样一种病？是怎么引起的？为什么青少年多发？";
+        NSString *text = @"脊柱侧弯是怎么样一种病？是怎么引起的？为什么青少年多发？";
+        articleLabel.attributedText = [CommonUtility getAttributedStringWithString:text lineSpace:5 font:FONT_(16) alignment:NSTextAlignmentLeft];
+        articleLabel.numberOfLines = 2;
         articleLabel.textColor = COLOR_TITLE;
         
         UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 67.5, SCREEN_WIDTH, 0.5)];
@@ -167,7 +180,11 @@
     UIView *morePapers = [[UIView alloc] initWithFrame:CGRectMake(0, offsetY, SCREEN_WIDTH, 41)];
     [_scrollView addSubview:morePapers];
     
-    UILabel *moreDoctorsLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, 41)];
+    UIImageView *paperIcon = [[UIImageView alloc] initWithFrame:CGRectMake(10, 12.5, 22, 16)];
+    paperIcon.image = [UIImage imageNamed:@"doc_detail_paper"];
+    [morePapers addSubview:paperIcon];
+    
+    UILabel *moreDoctorsLabel = [[UILabel alloc] initWithFrame:CGRectMake(41, 0, 100, 41)];
     moreDoctorsLabel.text = @"发表论文";
     moreDoctorsLabel.textColor = COLOR_NAV;
     moreDoctorsLabel.font = FONT_(16);
@@ -187,10 +204,12 @@
         UIView *paper = [[UIView alloc] initWithFrame:CGRectMake(0, 95*i, SCREEN_WIDTH, 95)];
         [relatedPapers addSubview:paper];
         
-        UILabel *paperLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 14, SCREEN_WIDTH - 20, 40)];
+        UILabel *paperLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, SCREEN_WIDTH - 20, 60)];
         [paper addSubview:paperLabel];
         
-        paperLabel.text = @"脊柱侧弯是怎么样一种病？是怎么引起的？为什么青少年多发？";
+        NSString *text = @"脊柱侧弯是怎么样一种病？是怎么引起的？为什么青少年多发？";
+        paperLabel.attributedText = [CommonUtility getAttributedStringWithString:text lineSpace:5 font:FONT_(16) alignment:NSTextAlignmentLeft];
+        paperLabel.numberOfLines = 2;
         paperLabel.textColor = COLOR_TITLE;
         
         UILabel *paperDate = [[UILabel alloc] initWithFrame:CGRectMake(10, 70, 100, 13)];
@@ -230,6 +249,8 @@
     focusBtn.frame = CGRectMake(0, 0, SCREEN_WIDTH/2, 45);
     [focusBtn setTitle:@"关注" forState:UIControlStateNormal];
     [focusBtn setTitleColor:COLOR_THEME forState:UIControlStateNormal];
+    [focusBtn setImage:[UIImage imageNamed:@"focus"] forState:UIControlStateNormal];
+    focusBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 5);
     focusBtn.titleLabel.font = FONT_(13);
     [focusBtn addTarget:self action:@selector(focusClick:) forControlEvents:UIControlEventTouchUpInside];
     [footerView addSubview:focusBtn];
@@ -242,6 +263,8 @@
     msgBtn.frame = CGRectMake(SCREEN_WIDTH/2, 0, SCREEN_WIDTH/2, 45);
     [msgBtn setTitle:@"留言咨询" forState:UIControlStateNormal];
     [msgBtn setTitleColor:COLOR_THEME forState:UIControlStateNormal];
+    [msgBtn setImage:[UIImage imageNamed:@"doc_detail_message"] forState:UIControlStateNormal];
+    msgBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 5);
     msgBtn.titleLabel.font = FONT_(13);
     [msgBtn addTarget:self action:@selector(msgClick:) forControlEvents:UIControlEventTouchUpInside];
     [footerView addSubview:msgBtn];
