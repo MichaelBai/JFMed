@@ -61,7 +61,7 @@ typedef NS_ENUM(NSInteger, ForgotPasswordProgress) {
 
 - (void)passwordClick:(UIButton *)sender
 {
-    kAppDelegate.accessToken = @"token";
+    // TODO: call reset API here
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

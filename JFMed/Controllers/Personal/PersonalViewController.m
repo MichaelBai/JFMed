@@ -9,6 +9,8 @@
 #import "PersonalViewController.h"
 #import "PersonalTableViewCell.h"
 #import "PersonalEditViewController.h"
+#import "AboutViewController.h"
+#import "FeedbackViewController.h"
 
 @interface PersonalViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -170,9 +172,11 @@
         } else if (indexPath.row == 2) {
             
         } else if (indexPath.row == 3) {
-            
+            FeedbackViewController *feebackVC = [FeedbackViewController new];
+            [self.navigationController pushViewController:feebackVC animated:YES];
         } else if (indexPath.row == 4) {
-            
+            AboutViewController *aboutVC = [[AboutViewController alloc] init];
+            [self.navigationController pushViewController:aboutVC animated:YES];
         }
     }
 }

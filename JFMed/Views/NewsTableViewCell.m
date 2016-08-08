@@ -27,6 +27,8 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         _newsImage = [UIImageView new];
         [self.contentView addSubview:_newsImage];
         _newsImage.backgroundColor = HEXColor(0xeaeaea);

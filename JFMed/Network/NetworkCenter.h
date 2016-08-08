@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define kErrorUserInfoMsgKey            @"errorMsg"         // 错误Key
+
 typedef void (^NetworkCompletionHandler)(id response, NSError* error, BOOL updatePage);
 
 @interface NetworkCenter : NSObject
@@ -21,5 +23,7 @@ typedef void (^NetworkCompletionHandler)(id response, NSError* error, BOOL updat
 - (void)getWithApiPath:(NSString *)apiPath
          requestParams:(NSDictionary *)requestParams
                handler:(NetworkCompletionHandler)handler;
+
+- (void)uploadImage:(UIImage*)image params:(NSDictionary *)params completionHandler:(void(^)(NSString *imgUrl, NSError* error))handler;
 
 @end

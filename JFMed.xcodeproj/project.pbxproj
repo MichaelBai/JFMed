@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C05B65E1D562338005DF0DE /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C05B65D1D562338005DF0DE /* AboutViewController.m */; };
+		4C05B6651D563479005DF0DE /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C05B6641D563479005DF0DE /* UIView+Toast.m */; };
+		4C05B6681D56401B005DF0DE /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C05B6671D56401B005DF0DE /* FeedbackViewController.m */; };
+		4C05B66B1D58107D005DF0DE /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C05B66A1D58107D005DF0DE /* UserInfo.m */; };
 		4C1CED791D3D3217003D599A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1CED781D3D3217003D599A /* main.m */; };
 		4C1CED7C1D3D3217003D599A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1CED7B1D3D3217003D599A /* AppDelegate.m */; };
 		4C1CED821D3D3217003D599A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C1CED801D3D3217003D599A /* Main.storyboard */; };
@@ -66,6 +70,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C05B65C1D562338005DF0DE /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		4C05B65D1D562338005DF0DE /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		4C05B6631D563479005DF0DE /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		4C05B6641D563479005DF0DE /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		4C05B6661D56401B005DF0DE /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		4C05B6671D56401B005DF0DE /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
+		4C05B6691D58107D005DF0DE /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		4C05B66A1D58107D005DF0DE /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		4C1CED731D3D3217003D599A /* JFMed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JFMed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C1CED771D3D3217003D599A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C1CED781D3D3217003D599A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -183,6 +195,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4C05B6621D563479005DF0DE /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				4C05B6631D563479005DF0DE /* UIView+Toast.h */,
+				4C05B6641D563479005DF0DE /* UIView+Toast.m */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
 		4C1CED6A1D3D3217003D599A = {
 			isa = PBXGroup;
 			children = (
@@ -268,6 +289,8 @@
 		4C2A15631D4D87CC00654D8A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4C05B6691D58107D005DF0DE /* UserInfo.h */,
+				4C05B66A1D58107D005DF0DE /* UserInfo.m */,
 				4C2A15681D4DB89200654D8A /* Doctor.h */,
 				4C2A15691D4DB89200654D8A /* Doctor.m */,
 				4C2A15741D4FA35800654D8A /* HomeModel.h */,
@@ -288,6 +311,7 @@
 		4C2A156B1D4F6FFD00654D8A /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				4C05B6621D563479005DF0DE /* Toast */,
 				4C2A156C1D4F6FFD00654D8A /* SVPullToRefresh */,
 			);
 			path = Libs;
@@ -394,6 +418,10 @@
 				4CD9A16E1D4C3C84000C613C /* PersonalViewController.m */,
 				4C2A15471D4CBD9200654D8A /* PersonalEditViewController.h */,
 				4C2A15481D4CBD9200654D8A /* PersonalEditViewController.m */,
+				4C05B65C1D562338005DF0DE /* AboutViewController.h */,
+				4C05B65D1D562338005DF0DE /* AboutViewController.m */,
+				4C05B6661D56401B005DF0DE /* FeedbackViewController.h */,
+				4C05B6671D56401B005DF0DE /* FeedbackViewController.m */,
 			);
 			name = Personal;
 			path = JFMed/Controllers/Personal;
@@ -568,6 +596,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C2A15761D4FA35800654D8A /* HomeModel.m in Sources */,
+				4C05B6681D56401B005DF0DE /* FeedbackViewController.m in Sources */,
+				4C05B6651D563479005DF0DE /* UIView+Toast.m in Sources */,
 				4C2A15491D4CBD9200654D8A /* PersonalEditViewController.m in Sources */,
 				4CBB1DB81D44FEB300357B9E /* UIView+Utils.m in Sources */,
 				4C1CED7C1D3D3217003D599A /* AppDelegate.m in Sources */,
@@ -578,6 +608,7 @@
 				4C2A15501D4CF75C00654D8A /* DoctorInfoViewController.m in Sources */,
 				4C2A154D1D4CC16700654D8A /* DoctorProfileViewController.m in Sources */,
 				4CBB1DB51D44FDCD00357B9E /* DoctorsViewController.m in Sources */,
+				4C05B66B1D58107D005DF0DE /* UserInfo.m in Sources */,
 				4CBB1DA81D426E0D00357B9E /* MBRotateControl.m in Sources */,
 				4C1CED791D3D3217003D599A /* main.m in Sources */,
 				4C6E93A11D541D03005706E5 /* SelfCheckIntroViewController.m in Sources */,
@@ -598,6 +629,7 @@
 				4C6E93A51D541D12005706E5 /* SelfCheckResultViewController.m in Sources */,
 				4CBB1DC11D459C2C00357B9E /* DoctorTableViewCell.m in Sources */,
 				4C7A8D411D4B8C5D00920CF4 /* ForgotPasswordViewController.m in Sources */,
+				4C05B65E1D562338005DF0DE /* AboutViewController.m in Sources */,
 				4C2A15671D4D9D0C00654D8A /* NetworkCenter.m in Sources */,
 				4CBB1D9E1D3FB4EE00357B9E /* LoginViewController.m in Sources */,
 				4CBB1DCA1D465E8700357B9E /* LoginProgressView.m in Sources */,

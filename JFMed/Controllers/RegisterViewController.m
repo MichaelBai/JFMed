@@ -89,7 +89,7 @@ typedef NS_ENUM(NSInteger, RegisterProgress) {
 
 - (void)birthdateClick:(UIButton *)sender
 {
-    kAppDelegate.accessToken = @"token";
+    // TODO: call register API here
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

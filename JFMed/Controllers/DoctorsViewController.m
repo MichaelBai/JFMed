@@ -63,6 +63,7 @@
         [response[@"doctor_list"] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             Doctor *doc = [[Doctor alloc] initWithDictionary:obj error:nil];
             [self.doctors addObject:doc];
+            [_tableViews makeObjectsPerformSelector:@selector(reloadData)];
         }];
     }];
 }
@@ -76,7 +77,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
-    return 10;
+    return self.doctors.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -85,7 +86,7 @@
     if (!cell) {
         cell = [[DoctorTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    [cell setData];
+    [cell setDataWithDoctor:self.doctors[indexPath.row]];
     return cell;
 }
 

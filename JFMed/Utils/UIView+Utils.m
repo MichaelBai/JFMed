@@ -7,6 +7,7 @@
 //
 
 #import "UIView+Utils.h"
+#import "UIView+Toast.h"
 
 @implementation UIView (Utils)
 
@@ -22,6 +23,11 @@
     for (UIView *subView in self.subviews) {
         [subView removeFromSuperview];
     }
+}
+
+- (void)showToast:(NSString *)toast
+{
+    [self makeToast:toast duration:1.0 position:CSToastPositionCenter];
 }
 
 @end

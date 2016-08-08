@@ -18,9 +18,10 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         _icon = [UIImageView new];
         [self.contentView addSubview:_icon];
-//        _icon.backgroundColor = HEXColor(0xeaeaea);
         
         _titleLabel = [UILabel new];
         [self.contentView addSubview:_titleLabel];

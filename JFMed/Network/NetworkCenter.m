@@ -8,7 +8,6 @@
 
 #import "NetworkCenter.h"
 
-#define kErrorUserInfoMsgKey            @"errorMsg"         // 错误Key
 NSString * const kResponseDataJSONKey_Code                 = @"result";
 NSString * const kResponseDataJSONKey_Data                 = @"data";
 NSString * const kResponseDataJSONKey_Mesg                 = @"error_info";
@@ -16,6 +15,8 @@ NSString * const kResponseDataJSONKey_Page                 = @"page_temp";
 NSString * const kResponseDataJSONKey_Count                = @"size_in_one_page";
 NSString * const kResponseDataJSONKey_Total                = @"size_total";
 NSInteger const kResponseErrorCode_NoError                 = 0;
+
+NSString * const kErrorDomain                              = @"ErrorDomain";
 
 @interface NetworkCenter ()
 
@@ -72,6 +73,39 @@ NSInteger const kResponseErrorCode_NoError                 = 0;
     }];
 }
 
+#pragma mark - image upload
+
+- (void)uploadImage:(UIImage*)image params:(NSDictionary *)params completionHandler:(void(^)(NSString *imgUrl, NSError* error))handler
+{
+    NSParameterAssert(image);
+    
+    [self.engine POST:@"jifeng/api/accounts/upload_img.do" parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        NSData* data = UIImageJPEGRepresentation(image, 0.7);
+        if (data) {
+            [formData appendPartWithFileData:data name:@"file" fileName:@"file" mimeType:@"image/jpeg"];
+        } else {
+            if (handler) {
+                handler(nil, [NSError errorWithDomain:kErrorDomain code:-1 userInfo:@{kErrorUserInfoMsgKey:@"读取照片出错"}]);
+            }
+        }
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSInteger code = [self _responseErrorCode:responseObject];
+        if(code == kResponseErrorCode_NoError) {
+            if (handler && [responseObject isKindOfClass:[NSDictionary class]]) {
+                handler(responseObject[@"data"][@"url"], nil);
+            }
+        } else {
+            if (handler) {
+                handler(nil, [NSError errorWithDomain:kErrorDomain code:code userInfo:@{kErrorUserInfoMsgKey:responseObject[kResponseDataJSONKey_Mesg]}]);
+            }
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (handler) {
+            handler(nil, [self _wrapHTTPError:error]);
+        }
+    }];
+}
+
 #pragma mark - Private Methods
 
 - (void)handleGenerallResponse:(id)response
@@ -93,7 +127,7 @@ NSInteger const kResponseErrorCode_NoError                 = 0;
             handler(data, nil, updatePage);
         }
     } else {
-        NSError *error = [NSError errorWithDomain:@"ErrorDomain"
+        NSError *error = [NSError errorWithDomain:kErrorDomain
                                              code:code
                                          userInfo:@{kErrorUserInfoMsgKey:[response objectForKey:kResponseDataJSONKey_Mesg]}];
         if (handler) {

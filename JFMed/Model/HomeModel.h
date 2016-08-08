@@ -8,7 +8,7 @@
 
 #import <Mantle/Mantle.h>
 
-@interface HomeBanner : MTLModel
+@interface HomeBanner : MTLModel <MTLJSONSerializing>
 
 @property (nonatomic, copy) NSString *img;
 @property (nonatomic, copy) NSString *type;
@@ -16,7 +16,7 @@
 
 @end
 
-@interface HomeNews : MTLModel
+@interface HomeNews : MTLModel <MTLJSONSerializing>
 
 @property (nonatomic, copy) NSString *img;
 @property (nonatomic, copy) NSString *content;
@@ -28,7 +28,7 @@
 
 @end
 
-@interface HomeDoctor : MTLModel
+@interface HomeDoctor : MTLModel <MTLJSONSerializing>
 
 @property (nonatomic, copy) NSString *avatar;
 @property (nonatomic, copy) NSString *name;

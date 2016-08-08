@@ -12,5 +12,6 @@
 
 - (void)addTapAction:(SEL)selector target:(id)target;
 - (void)removeAllSubViews;
+- (void)showToast:(NSString *)toast;
 
 @end

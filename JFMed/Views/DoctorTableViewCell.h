@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class Doctor;
+
 @interface DoctorTableViewCell : UITableViewCell
 
 + (CGFloat)CellHeight;
-- (void)setData;
+- (void)setDataWithDoctor:(Doctor *)doctor;
 
 @end

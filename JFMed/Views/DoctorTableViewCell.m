@@ -7,6 +7,7 @@
 //
 
 #import "DoctorTableViewCell.h"
+#import "Doctor.h"
 
 @interface DoctorTableViewCell ()
 
@@ -24,9 +25,13 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         _docImage = [UIImageView new];
         [self.contentView addSubview:_docImage];
         _docImage.backgroundColor = HEXColor(0xeaeaea);
+        _docImage.contentMode = UIViewContentModeScaleAspectFill;
+        _docImage.clipsToBounds = YES;
         
         _nameLabel = [UILabel new];
         [self.contentView addSubview:_nameLabel];
@@ -85,13 +90,13 @@
     return self;
 }
 
-- (void)setData
+- (void)setDataWithDoctor:(Doctor *)doctor
 {
-    [_docImage sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@"docHead"]];
-    _nameLabel.text = @"赵一铭";
-    _hospitalLabel.text = @"北京协和医院";
-    _levelLabel.text = @"主任医师";
-    _advisoryLabel.text = @"147次咨询";
+    [_docImage sd_setImageWithURL:[NSURL URLWithString:doctor.avatar] placeholderImage:[UIImage imageNamed:@"docHead"]];
+    _nameLabel.text = doctor.name;
+    _hospitalLabel.text = doctor.hospital;
+    _levelLabel.text = doctor.title;
+    _advisoryLabel.text = [NSString stringWithFormat:@"%@次咨询", doctor.consultation_times];
 }
 
 + (CGFloat)CellHeight

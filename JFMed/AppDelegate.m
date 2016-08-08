@@ -34,21 +34,23 @@
 - (void)debugHTTP
 {
 #if DEBUG
-    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        return [request.URL.path isEqualToString:@"/home/data"];
-    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
-        // Stub it with our "wsresponse.json" stub file
-        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFile(@"home_data.json",self.class)
-                                                statusCode:200 headers:@{@"Content-Type":@"application/json"}];
-    }];
-    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        return [request.URL.path isEqualToString:@"/news/list"];
-    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
-        // Stub it with our "wsresponse.json" stub file
-        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFile(@"news_list.json",self.class)
-                                                statusCode:200 headers:@{@"Content-Type":@"application/json"}];
-    }];
+    [self debugApiPath:@"/home/data" filePath:@"home_data.json"];
+    [self debugApiPath:@"/news/list" filePath:@"news_list.json"];
+    [self debugApiPath:@"/doctor/list" filePath:@"doctor_list.json"];
+    [self debugApiPath:@"/doctor/group" filePath:@"doctors_group.json"];
+    [self debugApiPath:@"/news/group" filePath:@"news_group.json"];
 #endif
+}
+
+- (void)debugApiPath:(NSString *)apiPath filePath:(NSString *)filePath
+{
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return [request.URL.path isEqualToString:apiPath];
+    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
+        // Stub it with our "wsresponse.json" stub file
+        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFile(filePath,self.class)
+                                                statusCode:200 headers:@{@"Content-Type":@"application/json"}];
+    }];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -59,10 +61,22 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    if (self.userInfo) {
+        NSDictionary *jsonDic = [MTLJSONAdapter JSONDictionaryFromModel:self.userInfo error:nil];
+        [[NSUserDefaults standardUserDefaults] setObject:jsonDic forKey:@"kUserInfo"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    NSDictionary *jsonDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"kUserInfo"];
+    if (jsonDic) {
+        UserInfo *userInfo = [MTLJSONAdapter modelOfClass:[UserInfo class] fromJSONDictionary:jsonDic error:nil];
+        if (userInfo) {
+            self.userInfo = userInfo;
+        }
+    }
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

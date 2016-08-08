@@ -83,8 +83,16 @@
 
 - (void)loginClick:(UIButton *)sender
 {
-    kAppDelegate.accessToken = @"token";
-    [self dismissViewControllerAnimated:YES completion:nil];
+    NSDictionary *params = @{@"phoneNum":@"18533675226", @"password":@"123456"};
+    [NETWORK postWithApiPath:@"jifeng/api/accounts/login.do" requestParams:params handler:^(id response, NSError *error, BOOL updatePage) {
+        if (error) {
+            [self.view showToast:error.userInfo[kErrorUserInfoMsgKey]];
+        } else {
+            UserInfo *userInfo = [[UserInfo alloc] initWithDictionary:response error:nil];
+            kAppDelegate.userInfo = userInfo;
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+    }];
 }
 
 - (void)textFieldDidChange:(UITextField *)textField

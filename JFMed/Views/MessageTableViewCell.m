@@ -23,6 +23,8 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         _docImage = [UIImageView new];
         [self.contentView addSubview:_docImage];
         _docImage.backgroundColor = HEXColor(0xeaeaea);

@@ -131,10 +131,16 @@ static const CGFloat kControlHeight = 122.5;
     [self.camera capture:^(LLSimpleCamera *camera, UIImage *image, NSDictionary *metadata, NSError *error) {
         [self.camera stop];
         if(!error) {
-            SelfCheckResultViewController *resultVC = [[SelfCheckResultViewController alloc] initWithAngle:self.angle];
-            [self.navigationController pushViewController:resultVC animated:YES];
-        }
-        else {
+            NSDictionary *params = @{@"phoneNum":@"18533675226"};
+            [NETWORK uploadImage:image params:params completionHandler:^(NSString *imgUrl, NSError *error) {
+                if (error) {
+                    [self.view showToast:error.userInfo[kErrorUserInfoMsgKey]];
+                } else {
+                    SelfCheckResultViewController *resultVC = [[SelfCheckResultViewController alloc] initWithAngle:self.angle];
+                    [self.navigationController pushViewController:resultVC animated:YES];
+                }
+            }];
+        } else {
             NSLog(@"An error has occured: %@", error);
         }
     } exactSeenImage:YES];
