@@ -12,6 +12,8 @@
 
 @interface DoctorTableViewCell : UITableViewCell
 
+@property (nonatomic, assign) BOOL isViewMode;
+
 + (CGFloat)CellHeight;
 - (void)setDataWithDoctor:(Doctor *)doctor;
 

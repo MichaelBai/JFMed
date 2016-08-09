@@ -31,7 +31,8 @@
         [self.contentView addSubview:_docImage];
         _docImage.backgroundColor = HEXColor(0xeaeaea);
         _docImage.contentMode = UIViewContentModeScaleAspectFill;
-        _docImage.clipsToBounds = YES;
+        _docImage.layer.cornerRadius = 55.0/2;
+        _docImage.layer.masksToBounds = YES;
         
         _nameLabel = [UILabel new];
         [self.contentView addSubview:_nameLabel];
@@ -88,6 +89,16 @@
         }];
     }
     return self;
+}
+
+- (void)setIsViewMode:(BOOL)isViewMode
+{
+    _isViewMode = isViewMode;
+    if (isViewMode) {
+        _advisoryLabel.hidden = YES;
+    } else {
+        _advisoryLabel.hidden = NO;
+    }
 }
 
 - (void)setDataWithDoctor:(Doctor *)doctor

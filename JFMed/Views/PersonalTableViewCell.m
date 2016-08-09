@@ -25,7 +25,7 @@
         
         _titleLabel = [UILabel new];
         [self.contentView addSubview:_titleLabel];
-        _titleLabel.textColor = HEXColor(0x555c70);
+        _titleLabel.textColor = COLOR_NAV;
         _titleLabel.font = FONT_(16);
         
         UIImageView *arrowView = [UIImageView new];
@@ -34,7 +34,7 @@
         
         UIView *lineView = [UIView new];
         [self.contentView addSubview:lineView];
-        lineView.backgroundColor = HEXColor(0xe5ecf2);
+        lineView.backgroundColor = COLOR_LINE;
         
         [_icon mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(@10);

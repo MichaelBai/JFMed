@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0417F21D595E820009A522 /* MyNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0417F11D595E820009A522 /* MyNewsViewController.m */; };
+		4C0417F51D5961440009A522 /* MyDoctorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0417F41D5961440009A522 /* MyDoctorsViewController.m */; };
 		4C05B65E1D562338005DF0DE /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C05B65D1D562338005DF0DE /* AboutViewController.m */; };
 		4C05B6651D563479005DF0DE /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C05B6641D563479005DF0DE /* UIView+Toast.m */; };
 		4C05B6681D56401B005DF0DE /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C05B6671D56401B005DF0DE /* FeedbackViewController.m */; };
@@ -33,6 +35,8 @@
 		4C2A15721D4F6FFD00654D8A /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A156F1D4F6FFD00654D8A /* UIScrollView+SVInfiniteScrolling.m */; };
 		4C2A15731D4F6FFD00654D8A /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A15711D4F6FFD00654D8A /* UIScrollView+SVPullToRefresh.m */; };
 		4C2A15761D4FA35800654D8A /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A15751D4FA35800654D8A /* HomeModel.m */; };
+		4C53FC421D5A2C39008F00B3 /* SelfCheckListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C53FC411D5A2C39008F00B3 /* SelfCheckListViewController.m */; };
+		4C53FC451D5A2C75008F00B3 /* SelfCheckTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C53FC441D5A2C75008F00B3 /* SelfCheckTableViewCell.m */; };
 		4C6E93A11D541D03005706E5 /* SelfCheckIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E939E1D541D03005706E5 /* SelfCheckIntroViewController.m */; };
 		4C6E93A21D541D03005706E5 /* SelfCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E93A01D541D03005706E5 /* SelfCheckViewController.m */; };
 		4C6E93A51D541D12005706E5 /* SelfCheckResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6E93A41D541D12005706E5 /* SelfCheckResultViewController.m */; };
@@ -70,6 +74,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C0417F01D595E820009A522 /* MyNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNewsViewController.h; sourceTree = "<group>"; };
+		4C0417F11D595E820009A522 /* MyNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNewsViewController.m; sourceTree = "<group>"; };
+		4C0417F31D5961440009A522 /* MyDoctorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDoctorsViewController.h; sourceTree = "<group>"; };
+		4C0417F41D5961440009A522 /* MyDoctorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDoctorsViewController.m; sourceTree = "<group>"; };
 		4C05B65C1D562338005DF0DE /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		4C05B65D1D562338005DF0DE /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		4C05B6631D563479005DF0DE /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
@@ -115,6 +123,10 @@
 		4C2A15711D4F6FFD00654D8A /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		4C2A15741D4FA35800654D8A /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
 		4C2A15751D4FA35800654D8A /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
+		4C53FC401D5A2C39008F00B3 /* SelfCheckListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfCheckListViewController.h; sourceTree = "<group>"; };
+		4C53FC411D5A2C39008F00B3 /* SelfCheckListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfCheckListViewController.m; sourceTree = "<group>"; };
+		4C53FC431D5A2C75008F00B3 /* SelfCheckTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfCheckTableViewCell.h; sourceTree = "<group>"; };
+		4C53FC441D5A2C75008F00B3 /* SelfCheckTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfCheckTableViewCell.m; sourceTree = "<group>"; };
 		4C6E939D1D541D03005706E5 /* SelfCheckIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfCheckIntroViewController.h; sourceTree = "<group>"; };
 		4C6E939E1D541D03005706E5 /* SelfCheckIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfCheckIntroViewController.m; sourceTree = "<group>"; };
 		4C6E939F1D541D03005706E5 /* SelfCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfCheckViewController.h; sourceTree = "<group>"; };
@@ -392,6 +404,8 @@
 				4CBB1DC91D465E8700357B9E /* LoginProgressView.m */,
 				4CD9A1691D4C3578000C613C /* PersonalTableViewCell.h */,
 				4CD9A16A1D4C3578000C613C /* PersonalTableViewCell.m */,
+				4C53FC431D5A2C75008F00B3 /* SelfCheckTableViewCell.h */,
+				4C53FC441D5A2C75008F00B3 /* SelfCheckTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -422,6 +436,12 @@
 				4C05B65D1D562338005DF0DE /* AboutViewController.m */,
 				4C05B6661D56401B005DF0DE /* FeedbackViewController.h */,
 				4C05B6671D56401B005DF0DE /* FeedbackViewController.m */,
+				4C0417F01D595E820009A522 /* MyNewsViewController.h */,
+				4C0417F11D595E820009A522 /* MyNewsViewController.m */,
+				4C0417F31D5961440009A522 /* MyDoctorsViewController.h */,
+				4C0417F41D5961440009A522 /* MyDoctorsViewController.m */,
+				4C53FC401D5A2C39008F00B3 /* SelfCheckListViewController.h */,
+				4C53FC411D5A2C39008F00B3 /* SelfCheckListViewController.m */,
 			);
 			name = Personal;
 			path = JFMed/Controllers/Personal;
@@ -603,12 +623,14 @@
 				4C1CED7C1D3D3217003D599A /* AppDelegate.m in Sources */,
 				4CBB1DA11D3FB4F800357B9E /* RegisterViewController.m in Sources */,
 				4C2A15731D4F6FFD00654D8A /* UIScrollView+SVPullToRefresh.m in Sources */,
+				4C53FC451D5A2C75008F00B3 /* SelfCheckTableViewCell.m in Sources */,
 				4C6E93A21D541D03005706E5 /* SelfCheckViewController.m in Sources */,
 				4C2A15531D4CF7A000654D8A /* DoctorWorkTimeViewController.m in Sources */,
 				4C2A15501D4CF75C00654D8A /* DoctorInfoViewController.m in Sources */,
 				4C2A154D1D4CC16700654D8A /* DoctorProfileViewController.m in Sources */,
 				4CBB1DB51D44FDCD00357B9E /* DoctorsViewController.m in Sources */,
 				4C05B66B1D58107D005DF0DE /* UserInfo.m in Sources */,
+				4C53FC421D5A2C39008F00B3 /* SelfCheckListViewController.m in Sources */,
 				4CBB1DA81D426E0D00357B9E /* MBRotateControl.m in Sources */,
 				4C1CED791D3D3217003D599A /* main.m in Sources */,
 				4C6E93A11D541D03005706E5 /* SelfCheckIntroViewController.m in Sources */,
@@ -618,6 +640,7 @@
 				4C2A15721D4F6FFD00654D8A /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				4CD9A16F1D4C3C84000C613C /* PersonalViewController.m in Sources */,
 				4CD9A16B1D4C3578000C613C /* PersonalTableViewCell.m in Sources */,
+				4C0417F51D5961440009A522 /* MyDoctorsViewController.m in Sources */,
 				4CBB1DC41D464FA900357B9E /* MessageListViewController.m in Sources */,
 				4CBB1DCD1D46E5FC00357B9E /* CommonUtility.m in Sources */,
 				4C2A156A1D4DB89200654D8A /* Doctor.m in Sources */,
@@ -628,6 +651,7 @@
 				4CBB1DBE1D4506ED00357B9E /* NSString+Utility.m in Sources */,
 				4C6E93A51D541D12005706E5 /* SelfCheckResultViewController.m in Sources */,
 				4CBB1DC11D459C2C00357B9E /* DoctorTableViewCell.m in Sources */,
+				4C0417F21D595E820009A522 /* MyNewsViewController.m in Sources */,
 				4C7A8D411D4B8C5D00920CF4 /* ForgotPasswordViewController.m in Sources */,
 				4C05B65E1D562338005DF0DE /* AboutViewController.m in Sources */,
 				4C2A15671D4D9D0C00654D8A /* NetworkCenter.m in Sources */,

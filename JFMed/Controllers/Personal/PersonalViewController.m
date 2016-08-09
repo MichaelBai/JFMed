@@ -11,6 +11,9 @@
 #import "PersonalEditViewController.h"
 #import "AboutViewController.h"
 #import "FeedbackViewController.h"
+#import "MyNewsViewController.h"
+#import "MyDoctorsViewController.h"
+#import "SelfCheckListViewController.h"
 
 @interface PersonalViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -31,6 +34,7 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.bounces = NO;
     [self.view addSubview:_tableView];
 }
 
@@ -71,6 +75,9 @@
     if (section == 0) {
         UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 95)];
         UIImageView *avatar = [[UIImageView alloc] initWithFrame:CGRectMake(10, 15, 65, 65)];
+        avatar.contentMode = UIViewContentModeScaleAspectFill;
+        avatar.layer.cornerRadius = 65.0/2;
+        avatar.layer.masksToBounds = YES;
         [avatar sd_setImageWithURL:nil placeholderImage:[UIImage imageNamed:@"avatar"]];
         [headerView addSubview:avatar];
         UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(90, 25, 180, 20)];
@@ -158,11 +165,14 @@
 {
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            
+            SelfCheckListViewController *checkListVC = [SelfCheckListViewController new];
+            [self.navigationController pushViewController:checkListVC animated:YES];
         } else if (indexPath.row == 1) {
-            
+            MyDoctorsViewController *myDocVC = [MyDoctorsViewController new];
+            [self.navigationController pushViewController:myDocVC animated:YES];
         } else if (indexPath.row == 2) {
-            
+            MyNewsViewController *myNewsVC = [MyNewsViewController new];
+            [self.navigationController pushViewController:myNewsVC animated:YES];
         }
     } else if (indexPath.section == 1) {
         if (indexPath.row == 0) {

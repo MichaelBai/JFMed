@@ -59,12 +59,15 @@
     
     self.doctors = [NSMutableArray array];
     [[NetworkCenter sharedCenter] postWithApiPath:@"doctor/list" requestParams:nil handler:^(id response, NSError *error, BOOL updatePage) {
-        NSLog(@"%@", response);
-        [response[@"doctor_list"] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            Doctor *doc = [[Doctor alloc] initWithDictionary:obj error:nil];
-            [self.doctors addObject:doc];
+        if (error) {
+            [self.view showToast:error.userInfo[kErrorUserInfoMsgKey]];
+        } else {
+            [response[@"doctor_list"] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                Doctor *doc = [[Doctor alloc] initWithDictionary:obj error:nil];
+                [self.doctors addObject:doc];
+            }];
             [_tableViews makeObjectsPerformSelector:@selector(reloadData)];
-        }];
+        }
     }];
 }
 

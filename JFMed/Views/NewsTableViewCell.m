@@ -18,6 +18,7 @@
 @property (nonatomic, strong) UILabel *handLabel;
 @property (nonatomic, strong) UIButton *heartImage;
 @property (nonatomic, strong) UILabel *heartLabel;
+@property (nonatomic, strong) UILabel *dateLabel;
 
 @end
 
@@ -37,13 +38,13 @@
         
         _titleLabel = [UILabel new];
         [self.contentView addSubview:_titleLabel];
-        _titleLabel.textColor = HEXColor(0x222222);
+        _titleLabel.textColor = COLOR_TITLE;
         _titleLabel.font = FONT_(15);
         _titleLabel.numberOfLines = 2;
         
         _authorLabel = [UILabel new];
         [self.contentView addSubview:_authorLabel];
-        _authorLabel.textColor = HEXColor(0x999999);
+        _authorLabel.textColor = COLOR_NOTICE;
         _authorLabel.font = FONT_(13);
         
         _handImage = [UIButton new];
@@ -53,7 +54,7 @@
         
         _handLabel = [UILabel new];
         [self.contentView addSubview:_handLabel];
-        _handLabel.textColor = HEXColor(0x999999);
+        _handLabel.textColor = COLOR_NOTICE;
         _handLabel.font = FONT_(12);
         
         UIView *handClickView = [UIView new];
@@ -67,16 +68,22 @@
         
         _heartLabel = [UILabel new];
         [self.contentView addSubview:_heartLabel];
-        _heartLabel.textColor = HEXColor(0x999999);
+        _heartLabel.textColor = COLOR_NOTICE;
         _heartLabel.font = FONT_(12);
         
         UIView *heartClickView = [UIView new];
         [self.contentView addSubview:heartClickView];
         [heartClickView addTapAction:@selector(heartClick) target:self];
         
+        _dateLabel = [UILabel new];
+        [self.contentView addSubview:_dateLabel];
+        _dateLabel.textColor = COLOR_NOTICE;
+        _dateLabel.font = FONT_(13);
+        _dateLabel.hidden = YES;
+        
         UIView *lineView = [UIView new];
         [self.contentView addSubview:lineView];
-        lineView.backgroundColor = HEXColor(0xeaeaea);
+        lineView.backgroundColor = COLOR_LINE;
         
         [_newsImage mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(@10);
@@ -121,6 +128,10 @@
             make.top.equalTo(_handImage).offset(-5);
             make.bottom.equalTo(_handImage).offset(5);
         }];
+        [_dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(_authorLabel);
+            make.right.equalTo(@-10);
+        }];
         [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.equalTo(@-0.5);
             make.left.and.right.equalTo(@0);
@@ -130,6 +141,24 @@
     return self;
 }
 
+- (void)setIsViewMode:(BOOL)isViewDateMode
+{
+    _isViewMode = isViewDateMode;
+    if (isViewDateMode) {
+        _dateLabel.hidden = NO;
+        _heartLabel.hidden = YES;
+        _heartImage.hidden = YES;
+        _handLabel.hidden = YES;
+        _handImage.hidden = YES;
+    } else {
+        _dateLabel.hidden = YES;
+        _heartLabel.hidden = NO;
+        _heartImage.hidden = NO;
+        _handLabel.hidden = NO;
+        _handImage.hidden = NO;
+    }
+}
+
 - (void)setDataWithNews:(HomeNews *)news
 {
     [_newsImage sd_setImageWithURL:[NSURL URLWithString:news.img] placeholderImage:[UIImage imageNamed:@"news"]];
@@ -137,6 +166,7 @@
     _authorLabel.text = news.source;
     _handLabel.text = @(news.like_count).stringValue;
     _heartLabel.text = @(news.heart_count).stringValue;
+    _dateLabel.text = @"2016.05.04";
 }
 
 + (CGFloat)CellHeight
