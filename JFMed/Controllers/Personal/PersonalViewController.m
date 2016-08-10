@@ -129,6 +129,7 @@
     if (!cell) {
         cell = [[PersonalTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
+    cell.subTitleLabel.text = @"";
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             cell.icon.image = [UIImage imageNamed:@"personal_icon_1"];
@@ -142,14 +143,33 @@
         }
     } else if (indexPath.section == 1) {
         if (indexPath.row == 0) {
+            cell = [[PersonalTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
             cell.icon.image = [UIImage imageNamed:@"personal_icon_4"];
             cell.titleLabel.text = @"通知推送";
+            UISwitch *switchBtn = [[UISwitch alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-51-20, 6.5, 51, 31)];
+//            NSLog(@"%@", NSStringFromCGRect(switchBtn.frame));
+            switchBtn.backgroundColor = [UIColor whiteColor];
+            [cell.contentView addSubview:switchBtn];
+            switchBtn.on = YES;
         } else if (indexPath.row == 1) {
             cell.icon.image = [UIImage imageNamed:@"personal_icon_5"];
             cell.titleLabel.text = @"清理缓存";
+            NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
+            NSArray *fileArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:cachePath error:nil];
+            long long sumSize = 0;
+            for (NSString *filename in fileArray)  {
+                //                    [[NSFileManager defaultManager] removeItemAtPath:[cachePath stringByAppendingPathComponent:filename] error:NULL];
+                NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:[cachePath stringByAppendingPathComponent:filename] error:nil];
+                NSNumber *fileSizeNumber = [fileAttributes objectForKey:NSFileSize];
+                long long fileSize = [fileSizeNumber longLongValue];
+                sumSize += fileSize;
+            }
+//            NSLog(@"%lld", sumSize);
+            cell.subTitleLabel.text = [NSString stringWithFormat:@"%.1fM", sumSize/1000000.0];
         } else if (indexPath.row == 2) {
             cell.icon.image = [UIImage imageNamed:@"personal_icon_6"];
             cell.titleLabel.text = @"检查新版本";
+            cell.subTitleLabel.text = @"0.0.1";
         } else if (indexPath.row == 3) {
             cell.icon.image = [UIImage imageNamed:@"personal_icon_7"];
             cell.titleLabel.text = @"意见反馈";
@@ -178,7 +198,23 @@
         if (indexPath.row == 0) {
             
         } else if (indexPath.row == 1) {
-            
+//            [self activityViewStartAnimating];
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
+                NSArray *fileArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:cachePath error:nil];
+//                long long sumSize = 0;
+                for (NSString *filename in fileArray)  {
+                    [[NSFileManager defaultManager] removeItemAtPath:[cachePath stringByAppendingPathComponent:filename] error:NULL];
+//                    NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:[cachePath stringByAppendingPathComponent:filename] error:nil];
+//                    NSNumber *fileSizeNumber = [fileAttributes objectForKey:NSFileSize];
+//                    long long fileSize = [fileSizeNumber longLongValue];
+//                    sumSize += fileSize;
+                }
+                dispatch_async(dispatch_get_main_queue(), ^{
+//                    [self activityViewEndAnimating];
+                    [self.view showToast:@"缓存清除成功"];
+                });
+            });
         } else if (indexPath.row == 2) {
             
         } else if (indexPath.row == 3) {

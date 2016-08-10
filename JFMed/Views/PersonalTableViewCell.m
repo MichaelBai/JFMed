@@ -28,6 +28,12 @@
         _titleLabel.textColor = COLOR_NAV;
         _titleLabel.font = FONT_(16);
         
+        _subTitleLabel = [UILabel new];
+        _subTitleLabel.textColor = COLOR_NAV;
+        _subTitleLabel.font = FONT_(12);
+        _subTitleLabel.textAlignment = NSTextAlignmentRight;
+        [self.contentView addSubview:_subTitleLabel];
+        
         UIImageView *arrowView = [UIImageView new];
         [self.contentView addSubview:arrowView];
         arrowView.image = [UIImage imageNamed:@"arrow"];
@@ -44,6 +50,10 @@
         }];
         [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(_icon.mas_right).offset(8);
+            make.centerY.equalTo(@0);
+        }];
+        [_subTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(arrowView.mas_left).offset(-10);
             make.centerY.equalTo(@0);
         }];
         [arrowView mas_makeConstraints:^(MASConstraintMaker *make) {
