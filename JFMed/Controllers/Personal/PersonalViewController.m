@@ -147,7 +147,6 @@
             cell.icon.image = [UIImage imageNamed:@"personal_icon_4"];
             cell.titleLabel.text = @"通知推送";
             UISwitch *switchBtn = [[UISwitch alloc] initWithFrame:CGRectMake(SCREEN_WIDTH-51-20, 6.5, 51, 31)];
-//            NSLog(@"%@", NSStringFromCGRect(switchBtn.frame));
             switchBtn.backgroundColor = [UIColor whiteColor];
             [cell.contentView addSubview:switchBtn];
             switchBtn.on = YES;
@@ -158,13 +157,11 @@
             NSArray *fileArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:cachePath error:nil];
             long long sumSize = 0;
             for (NSString *filename in fileArray)  {
-                //                    [[NSFileManager defaultManager] removeItemAtPath:[cachePath stringByAppendingPathComponent:filename] error:NULL];
                 NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:[cachePath stringByAppendingPathComponent:filename] error:nil];
                 NSNumber *fileSizeNumber = [fileAttributes objectForKey:NSFileSize];
                 long long fileSize = [fileSizeNumber longLongValue];
                 sumSize += fileSize;
             }
-//            NSLog(@"%lld", sumSize);
             cell.subTitleLabel.text = [NSString stringWithFormat:@"%.1fM", sumSize/1000000.0];
         } else if (indexPath.row == 2) {
             cell.icon.image = [UIImage imageNamed:@"personal_icon_6"];
@@ -198,20 +195,13 @@
         if (indexPath.row == 0) {
             
         } else if (indexPath.row == 1) {
-//            [self activityViewStartAnimating];
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 NSString *cachePath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
                 NSArray *fileArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:cachePath error:nil];
-//                long long sumSize = 0;
                 for (NSString *filename in fileArray)  {
                     [[NSFileManager defaultManager] removeItemAtPath:[cachePath stringByAppendingPathComponent:filename] error:NULL];
-//                    NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:[cachePath stringByAppendingPathComponent:filename] error:nil];
-//                    NSNumber *fileSizeNumber = [fileAttributes objectForKey:NSFileSize];
-//                    long long fileSize = [fileSizeNumber longLongValue];
-//                    sumSize += fileSize;
                 }
                 dispatch_async(dispatch_get_main_queue(), ^{
-//                    [self activityViewEndAnimating];
                     [self.view showToast:@"缓存清除成功"];
                 });
             });

@@ -8,8 +8,17 @@
 
 #import "AppDelegate.h"
 #import "WelcomeViewController.h"
+#import "HomeViewController.h"
+#import "MessageListViewController.h"
+#import "SelfCheckViewController.h"
+#import "PersonalViewController.h"
 
-@interface AppDelegate ()
+static NSString * const kHomeTabName = @"Home";
+static NSString * const kMessageTabName = @"Message";
+static NSString * const kCheckTabName = @"Check";
+static NSString * const kMyTabName = @"My";
+
+@interface AppDelegate () <UITabBarControllerDelegate>
 
 @end
 
@@ -23,10 +32,12 @@
     [self debugHTTP];
 #endif
     
-    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60) forBarMetrics:UIBarMetricsDefault];
-    UIImage* image = [UIImage imageNamed:@"back-icon"];
-    image = [image stretchableImageWithLeftCapWidth:image.size.width topCapHeight:0];
-    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:image forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [self customAppearance];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = [self setupTabbar];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     
     return YES;
 }
@@ -51,6 +62,87 @@
         return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFile(filePath,self.class)
                                                 statusCode:200 headers:@{@"Content-Type":@"application/json"}];
     }];
+}
+
+#pragma mark - appearance
+
+- (void)customAppearance
+{
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60) forBarMetrics:UIBarMetricsDefault];
+    UIImage* image = [UIImage imageNamed:@"back-icon"];
+    image = [image stretchableImageWithLeftCapWidth:image.size.width topCapHeight:0];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:image forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+}
+
+#pragma mark - tab bar
+
+- (UINavigationController *)naviControllerWithName:(NSString *)name
+{
+    UIEdgeInsets tabBarItemInset = UIEdgeInsetsMake(5, 0, -5, 0);
+    if ([name isEqualToString:kHomeTabName]) {
+        HomeViewController *homeVC = [[HomeViewController alloc] init];
+        
+        homeVC.tabBarItem.image = [[UIImage imageNamed:@"tab_home"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        homeVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"tab_home_highlight"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        
+        homeVC.tabBarItem.imageInsets = tabBarItemInset;
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:homeVC];
+        return nav;
+    } else if ([name isEqualToString:kMessageTabName]){
+        MessageListViewController *messageListVC = [[MessageListViewController alloc] init];
+        
+        messageListVC.tabBarItem.image = [[UIImage imageNamed:@"tab_msg"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        messageListVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"tab_msg_highlight"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        
+        messageListVC.tabBarItem.imageInsets = tabBarItemInset;
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:messageListVC];
+        return nav;
+    } else if ([name isEqualToString:kCheckTabName]){
+        SelfCheckViewController *checkVC = [[SelfCheckViewController alloc] init];
+        
+        checkVC.tabBarItem.image = [[UIImage imageNamed:@"tab_check"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        checkVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"tab_check_highlight"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        
+        checkVC.tabBarItem.imageInsets = tabBarItemInset;
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:checkVC];
+        return nav;
+    } else if ([name isEqualToString:kMyTabName]){
+        PersonalViewController *personalVC = [[PersonalViewController alloc] init];
+        
+        personalVC.tabBarItem.image = [[UIImage imageNamed:@"tab_my"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        personalVC.tabBarItem.selectedImage = [[UIImage imageNamed:@"tab_my_highlight"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        
+        personalVC.tabBarItem.imageInsets = tabBarItemInset;
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:personalVC];
+        return nav;
+    } else {
+        WelcomeViewController *loginVC = [[WelcomeViewController alloc] init];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+        return nav;
+    }
+}
+
+- (UITabBarController *)setupTabbar
+{
+    UINavigationController *homeNav = [self naviControllerWithName:kHomeTabName];
+    UINavigationController *messageNav = [self naviControllerWithName:kMessageTabName];
+    UINavigationController *checkNav = [self naviControllerWithName:kCheckTabName];
+    UINavigationController *myNav = [self naviControllerWithName:kMyTabName];
+    
+    NSArray *tabControllers = @[homeNav, messageNav, checkNav, myNav];
+    UITabBarController *tabController = [[UITabBarController alloc] init];
+    tabController.viewControllers = tabControllers;
+    [tabController.tabBar setTintColor:[UIColor redColor]];
+    tabController.delegate = self;
+    
+    return tabController;
+}
+
+#pragma mark - UITabBarControllerDelegate
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

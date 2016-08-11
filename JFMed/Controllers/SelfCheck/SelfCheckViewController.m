@@ -30,6 +30,7 @@ static const CGFloat kControlHeight = 122.5;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = HEXColor(0xe5e5e5);
+    self.title = @"脊柱自查";
     
     [self setupOverlay];
     
